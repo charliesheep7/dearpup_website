@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <div className="prose dark:prose-invert max-w-none py-8">
         <h1>Privacy Policy</h1>
         <p>
-          <strong>Last updated: [Oct 25, 2025]</strong>
+          <strong>Last updated: [Jan 29, 2026]</strong>
         </p>
         <p>
           DeenBack ("we," "us," or "our") is committed to protecting your privacy. This Privacy
