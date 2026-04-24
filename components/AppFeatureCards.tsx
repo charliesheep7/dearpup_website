@@ -11,8 +11,7 @@ const features = [
   },
   {
     title: 'Track Your Deen',
-    description:
-      'Build Islamic habits with daily tracking, streaks, and reflection quizzes.',
+    description: 'Build Islamic habits with daily tracking, streaks, and reflection quizzes.',
   },
 ]
 
