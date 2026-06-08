@@ -30,7 +30,7 @@ const features = [
     iconBg: 'bg-blue-100 dark:bg-blue-900/30',
     iconColor: 'text-blue-600 dark:text-blue-400',
     fullDescription:
-      "Think Duolingo, but for Islamic knowledge. DeenUp breaks learning into small, playful steps — finish a lesson, take a quick quiz, and watch your streak grow. Earn levels as you progress, unlock new topics, and get gentle daily reminders that keep you coming back. Building real knowledge of your Deen finally feels rewarding instead of overwhelming.",
+      'Think Duolingo, but for Islamic knowledge. DeenUp breaks learning into small, playful steps — finish a lesson, take a quick quiz, and watch your streak grow. Earn levels as you progress, unlock new topics, and get gentle daily reminders that keep you coming back. Building real knowledge of your Deen finally feels rewarding instead of overwhelming.',
   },
   {
     id: 'scholar-approved',

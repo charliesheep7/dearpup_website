@@ -45,8 +45,7 @@ const testimonials = [
     borderColor: 'border-purple-200 dark:border-purple-800',
     name: 'Fatima S.',
     title: 'University Student',
-    quote:
-      "It's like Duolingo for Islam — the quizzes and levels make learning genuinely fun.",
+    quote: "It's like Duolingo for Islam — the quizzes and levels make learning genuinely fun.",
     fullStory:
       "I always wanted to learn more about my religion but textbooks put me to sleep. DeenUp turned it into a game — short lessons, quick quizzes, levels to unlock, and a streak I don't want to break. Between classes I'll do a few lessons without even thinking of it as studying. I've learned so much and it never feels like a chore.",
   },
