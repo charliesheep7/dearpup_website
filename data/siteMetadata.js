@@ -1,11 +1,11 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'DeenUp - Your Islamic Companion',
+  title: 'DeenUp — Learn Islam, One Swipe at a Time',
   author: 'DeenUp',
   authorSlug: 'mathias-yussif',
   headerTitle: 'DeenUp',
   description:
-    'Track your daily Deen, get Quranic-cited answers 24/7, and connect with Muslim brothers and sisters worldwide. Your AI-powered Islamic companion.',
+    'Turn scrolling into learning with DeenUp — a fun, swipeable feed of bite-sized, scholar-approved Islamic knowledge. Grow your Deen a little every day.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://www.deenup.app',

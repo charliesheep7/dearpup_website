@@ -10,29 +10,29 @@ interface FAQProps {
 
 const faqs = [
   {
-    question: "How can I trust the Islamic accuracy of DeenUp's guidance?",
+    question: 'What exactly is DeenUp?',
     answer:
-      "DeenUp does not rely on AI to generate Islamic rulings. Instead, we use AI as a powerful search tool to help you find authentic guidance directly from the Holy Quran and authentic Hadith. Every answer includes proper citations and references to original sources, allowing you to verify the information yourself. Our AI helps you access the wisdom of the Quran more efficiently, but the guidance comes from Allah's words, not artificial intelligence.",
+      "DeenUp is a learning app for Islamic knowledge — think Duolingo for your Deen, or a halal alternative to endless TikTok scrolling. Instead of doom-scrolling, you swipe through short, scholar-approved lessons, take quick quizzes, and build a daily learning streak. It's designed to make growing your Islamic knowledge fun, simple, and consistent.",
   },
   {
-    question: 'Is DeenUp suitable for new Muslims and reverts?',
+    question: 'How is the content kept Islamically accurate?',
     answer:
-      'Absolutely! DeenUp is designed for Muslims at all stages of their faith journey. New Muslims and reverts particularly benefit from our 24/7 AI companion that can answer questions anytime, without judgment. The Daily Good Deen checklist helps establish foundational habits, and the community letter feature connects you with supportive brothers and sisters worldwide.',
+      "Every lesson on DeenUp is rooted in the Quran and authentic Sunnah and reviewed by qualified scholars before it goes live. We don't use AI or algorithms to generate religious rulings — technology only helps us organize and deliver trustworthy knowledge. You can always see the sources behind what you learn.",
   },
   {
-    question: 'How does the anonymous letter feature work?',
+    question: 'Is DeenUp good for new Muslims and reverts?',
     answer:
-      'The letter feature allows you to write and receive anonymous messages to help Muslim brothers and sisters globally. You can share encouragement, ask for advice, or offer support—all while maintaining privacy. This feature is inspired by Quran 4:114, encouraging charity, goodness, and making peace between people. Every letter is moderated to ensure it aligns with Islamic values.',
+      'Absolutely. DeenUp meets you wherever you are. Bite-sized lessons start from the fundamentals and build up gradually, so new Muslims and reverts can learn the basics at their own pace — without judgment and without feeling overwhelmed. Lifelong Muslims will find plenty to deepen their knowledge too.',
   },
   {
-    question: 'Can I customize the Daily Good Deen checklist?',
+    question: 'How is this different from just scrolling social media?',
     answer:
-      'Yes! While DeenUp provides a default checklist based on essential Islamic practices, you can customize it to match your personal spiritual goals and daily routine. Track prayers, Quran reading, dhikr, charity, and other acts of worship that are meaningful to your faith journey.',
+      "DeenUp gives you the same easy, swipeable experience you're used to — but every swipe leaves you with beneficial knowledge instead of wasted time. There's no doom-scrolling, no harmful content, and no algorithm pulling you toward distraction. It's screen time that actually grows your Deen.",
   },
   {
     question: 'What languages does DeenUp support?',
     answer:
-      'DeenUp currently supports English and Arabic, with the interface automatically switching to right-to-left (RTL) layout for Arabic. We chose these languages to serve both English-speaking Muslims globally and Arabic-speaking Muslims in the Middle East and North Africa. More languages may be added based on community needs.',
+      'DeenUp currently supports English and Arabic, with the interface automatically switching to a right-to-left (RTL) layout for Arabic. More languages may be added as the community grows.',
   },
 ]
 

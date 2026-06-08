@@ -1,17 +1,18 @@
 const features = [
   {
-    title: 'Quranic Answers 24/7',
+    title: 'A Feed Worth Scrolling',
     description:
-      'Ask any Islamic question and get answers rooted in Quran and Sunnah from trusted scholars.',
+      'Swipe through short, scholar-approved Islamic lessons instead of mindless doom-scrolling.',
   },
   {
-    title: 'Daily Verses & Duas',
+    title: 'Learn Through Play',
     description:
-      'Start each day with a Quranic verse and curated duas for every moment of your life.',
+      'Bite-sized lessons, quizzes, levels, and daily streaks make growing your Deen a habit.',
   },
   {
-    title: 'Track Your Deen',
-    description: 'Build Islamic habits with daily tracking, streaks, and reflection quizzes.',
+    title: 'Scholar-Approved',
+    description:
+      'Every lesson is rooted in the Quran and authentic Sunnah and reviewed by qualified scholars.',
   },
 ]
 

@@ -30,7 +30,7 @@ export default function CTA({ lang = 'en', dict }: CTAProps) {
         <h2
           className={`mb-6 text-4xl leading-tight font-bold text-[--color-text] sm:text-5xl lg:text-6xl dark:text-white ${lang === 'ar' ? 'font-arabic' : ''}`}
         >
-          {dict?.cta?.heading || 'Start strengthening your Deen today'}
+          {dict?.cta?.heading || 'Trade doom-scrolling for your Deen'}
         </h2>
 
         <p

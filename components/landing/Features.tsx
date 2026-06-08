@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { BookOpen, CheckCircle2, Mail, X } from 'lucide-react'
+import { Sparkles, Flame, ShieldCheck, X } from 'lucide-react'
 import type { Dictionary } from '@/types/dictionary'
 
 interface FeaturesProps {
@@ -11,37 +11,37 @@ interface FeaturesProps {
 
 const features = [
   {
-    id: 'ask-anything',
-    icon: BookOpen,
-    title: 'Ask Anything, Anytime',
+    id: 'feed',
+    icon: Sparkles,
+    title: 'A Feed Worth Scrolling',
     description:
-      'Get instant answers to your Islamic questions, backed by authentic Quranic citations and Hadith references. Your AI companion is available 24/7 to help guide you.',
+      'Swap mindless doom-scrolling for a swipeable feed of short, beautiful Islamic lessons. Every swipe teaches you something real about your Deen.',
     iconBg: 'bg-emerald-100 dark:bg-emerald-900/30',
     iconColor: 'text-emerald-600 dark:text-emerald-400',
     fullDescription:
-      "Our AI-powered Islamic companion provides instant, authentic answers to your questions about Islam. Whether you're a new Muslim or seeking to deepen your knowledge, get responses backed by Quranic verses and authentic Hadith. Ask about prayer times, Islamic history, daily practices, or complex theological questions - your personal guide is always available, day or night.",
+      "DeenUp reimagines the addictive short-form feed for good. Instead of losing hours to mindless content, you scroll through bite-sized Islamic lessons — verses, hadith, stories of the Prophets, daily duas, and practical guidance — each crafted to teach you something in under a minute. It's the same effortless scrolling you already love, redirected toward knowledge that brings you closer to Allah.",
   },
   {
-    id: 'build-habits',
-    icon: CheckCircle2,
-    title: 'Build Better Habits',
+    id: 'learn-through-play',
+    icon: Flame,
+    title: 'Learn Through Play',
     description:
-      'Track your daily Islamic practices and watch your Deen grow stronger. Complete your Daily Good Deen checklist and build lasting spiritual habits.',
+      'Bite-sized lessons, daily streaks, levels, and quick quizzes turn growing your Deen into a daily habit you actually keep.',
     iconBg: 'bg-blue-100 dark:bg-blue-900/30',
     iconColor: 'text-blue-600 dark:text-blue-400',
     fullDescription:
-      'Transform your spiritual journey with our comprehensive habit tracking system. Set daily goals for prayers, Quran reading, dhikr, and other Islamic practices. Track your progress with beautiful visualizations, build streaks to stay motivated, and unlock special postcards as you achieve milestones. Our gentle reminders and progress tracking help you build lasting habits that strengthen your connection with Allah.',
+      "Think Duolingo, but for Islamic knowledge. DeenUp breaks learning into small, playful steps — finish a lesson, take a quick quiz, and watch your streak grow. Earn levels as you progress, unlock new topics, and get gentle daily reminders that keep you coming back. Building real knowledge of your Deen finally feels rewarding instead of overwhelming.",
   },
   {
-    id: 'connect-ummah',
-    icon: Mail,
-    title: 'Connect with the Ummah',
+    id: 'scholar-approved',
+    icon: ShieldCheck,
+    title: 'Scholar-Approved, Always',
     description:
-      'Write and receive anonymous letters to help Muslim brothers and sisters around the globe. Share encouragement, seek advice, and strengthen bonds—like a message in a bottle across the Muslim world.',
+      'Every lesson is rooted in the Quran and authentic Sunnah and reviewed by qualified scholars — knowledge you can trust, not algorithm guesswork.',
     iconBg: 'bg-purple-100 dark:bg-purple-900/30',
     iconColor: 'text-purple-600 dark:text-purple-400',
     fullDescription:
-      "Experience the beauty of global Islamic brotherhood and sisterhood through our unique letter exchange feature. Send anonymous letters of encouragement, share your experiences, or seek advice from Muslims worldwide. Receive heartfelt messages from the Ummah when you need support. This safe, moderated platform creates meaningful connections that transcend borders, reminding us that we're all part of one global Muslim family.",
+      "On DeenUp, every piece of content is grounded in the Quran and authentic Hadith and checked by qualified scholars before it reaches your feed. We don't let algorithms invent rulings or opinions — we use technology only to make trustworthy, well-sourced knowledge easier to learn. Whether you're a new Muslim or have studied for years, you can be confident that what you're learning is sound.",
   },
 ]
 
@@ -70,13 +70,13 @@ export default function Features({ lang = 'en', dict }: FeaturesProps) {
             <h2
               className={`mb-4 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl dark:text-white ${lang === 'ar' ? 'font-arabic' : ''}`}
             >
-              {dict?.features?.heading || 'Your Complete Islamic Companion'}
+              {dict?.features?.heading || 'Grow your Deen, one swipe at a time'}
             </h2>
             <p
               className={`mx-auto max-w-2xl text-lg text-gray-600 sm:text-xl dark:text-gray-300 ${lang === 'ar' ? 'font-arabic' : ''}`}
             >
               {dict?.features?.subtitle ||
-                'Strengthen your Deen with guidance, habits, and community'}
+                'Bite-sized, scholar-approved Islamic learning that turns spare minutes into real knowledge'}
             </p>
           </div>
 

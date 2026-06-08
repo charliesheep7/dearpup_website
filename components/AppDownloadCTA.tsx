@@ -7,8 +7,8 @@ interface AppDownloadCTAProps {
 }
 
 const AppDownloadCTA = ({
-  title = 'Strengthen your daily Islamic practice',
-  blurb = 'DeenUp gives you 24/7 Quranic-cited answers, daily duas, and habit tracking — all grounded in authentic scholarship.',
+  title = 'Learn your Deen, one swipe at a time',
+  blurb = 'DeenUp turns doom-scrolling into learning — a swipeable feed of bite-sized, scholar-approved Islamic lessons, quick quizzes, and daily streaks.',
   placement,
 }: AppDownloadCTAProps) => (
   <div className="border-primary-200 bg-primary-50 dark:border-primary-800 dark:bg-primary-900/20 my-8 rounded-xl border p-6">

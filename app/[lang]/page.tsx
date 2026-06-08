@@ -28,8 +28,8 @@ export default async function LangHome({ params }: { params: Promise<{ lang: 'ar
 }
 
 export const metadata = genPageMetadata({
-  title: 'ديّن أب - رفيقك الإسلامي',
+  title: 'ديّن أب — تعلّم دينك مع كل تمريرة',
   description:
-    'حافظ على اتساقك مع الصلاة والقرآن والمجتمع من خلال رفيق ديّن أب الإسلامي المدعوم بالذكاء الاصطناعي.',
+    'يحوّل ديّن أب التصفح بلا فائدة إلى تعلّم — موجز قصير وممتع من المعرفة الإسلامية الموثوقة المعتمدة من العلماء. ابنِ عادة يومية ونمِّ دينك.',
   alternates: buildLanguageAlternates('/', { currentLanguage: 'ar' }),
 })

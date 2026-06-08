@@ -148,6 +148,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             name: 'DeenUp',
             url: 'https://www.deenup.app',
             logo: 'https://www.deenup.app/static/favicons/android-chrome-512x512.png',
+            slogan: 'Learn Islam, One Swipe at a Time',
+            description:
+              'DeenUp turns doom-scrolling into learning — a fun, swipeable feed of bite-sized, scholar-approved Islamic knowledge with quizzes and daily streaks.',
           }),
         }}
       />

@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from 'clsx'
-import { BookOpen, CheckCircle2, ChevronDown, Mail } from 'lucide-react'
+import { Sparkles, Flame, ChevronDown, ShieldCheck } from 'lucide-react'
 import { useState } from 'react'
 import type { Dictionary } from '@/types/dictionary'
 
@@ -13,42 +13,42 @@ interface TestimonialsProps {
 const testimonials = [
   {
     category: 'Spiritual Growth',
-    icon: BookOpen,
+    icon: Sparkles,
     iconColor: 'text-emerald-600 dark:text-emerald-400',
     bgColor: 'bg-emerald-50 dark:bg-emerald-900/20',
     borderColor: 'border-emerald-200 dark:border-emerald-800',
     name: 'Aisha M.',
     title: 'New Revert',
     quote:
-      'DeenUp helped me understand Islam with authentic Quranic guidance. The AI companion answered my questions with proper references.',
+      'As a revert, DeenUp taught me the basics one short lesson at a time. It never felt overwhelming.',
     fullStory:
-      "As a new Muslim, I had so many questions about daily practices and Islamic teachings. DeenUp's AI companion provided instant answers backed by Quranic verses and Hadith references. I could ask anything at 3 AM and get authentic guidance. It's like having a knowledgeable friend available 24/7, helping me grow in my faith with confidence.",
+      "When I embraced Islam I didn't know where to start, and most resources felt intimidating. DeenUp broke everything into small, swipeable lessons I could finish in a minute. Little by little I learned how to pray, the meaning of verses, and the stories of the Prophets. The quizzes helped it stick, and the daily streak kept me coming back. For the first time, learning my Deen felt doable.",
   },
   {
-    category: 'Daily Habits',
-    icon: CheckCircle2,
+    category: 'Daily Habit',
+    icon: Flame,
     iconColor: 'text-blue-600 dark:text-blue-400',
     bgColor: 'bg-blue-50 dark:bg-blue-900/20',
     borderColor: 'border-blue-200 dark:border-blue-800',
     name: 'Omar K.',
     title: 'Working Professional',
     quote:
-      "The Daily Good Deen checklist keeps me consistent. I've built a 60-day streak and my faith has never been stronger.",
+      'I traded doom-scrolling for DeenUp. Now my spare minutes actually grow my Deen — 60-day streak and counting.',
     fullStory:
-      'Between work deadlines and family responsibilities, I was struggling to maintain my Islamic practices. The Daily Good Deen checklist helped me track my progress and build lasting habits. Seeing my streak grow motivated me to stay consistent with my prayers and Quran reading. The gentle reminders and beautiful unlocked postcards make spiritual growth feel rewarding.',
+      "I used to open TikTok the moment I had a free minute and lose an hour without noticing. Now I open DeenUp instead. The feed is just as easy to scroll, but every lesson teaches me something real. Building a streak made it addictive in the best way, and after two months I've learned more than I did in years. It completely changed my screen time.",
   },
   {
-    category: 'Community Support',
-    icon: Mail,
+    category: 'Fun Learning',
+    icon: ShieldCheck,
     iconColor: 'text-purple-600 dark:text-purple-400',
     bgColor: 'bg-purple-50 dark:bg-purple-900/20',
     borderColor: 'border-purple-200 dark:border-purple-800',
     name: 'Fatima S.',
     title: 'University Student',
     quote:
-      'The anonymous letters feature connected me with Muslims worldwide. I received encouragement during my hardest times.',
+      "It's like Duolingo for Islam — the quizzes and levels make learning genuinely fun.",
     fullStory:
-      "Living far from family as a Muslim student felt isolating. Through DeenUp's letter feature, I connected with Muslim brothers and sisters globally. The anonymous support and encouragement I received reminded me I'm never alone in this journey. I've also been able to help others, which strengthened my own faith immensely. Truly a blessing.",
+      "I always wanted to learn more about my religion but textbooks put me to sleep. DeenUp turned it into a game — short lessons, quick quizzes, levels to unlock, and a streak I don't want to break. Between classes I'll do a few lessons without even thinking of it as studying. I've learned so much and it never feels like a chore.",
   },
 ]
 
@@ -68,7 +68,7 @@ export default function Testimonials({ lang = 'en', dict }: TestimonialsProps) {
             className={`mx-auto max-w-2xl text-lg text-gray-600 sm:text-xl dark:text-gray-300 ${lang === 'ar' ? 'font-arabic' : ''}`}
           >
             {dict?.testimonials?.subtitle ||
-              'See how DeenUp is helping Muslims strengthen their faith journey'}
+              'See how DeenUp is helping Muslims learn and grow every day'}
           </p>
         </div>
 

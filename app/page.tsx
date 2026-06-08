@@ -7,9 +7,9 @@ import FAQ from '@/components/landing/FAQ'
 import { genPageMetadata, buildLanguageAlternates } from 'app/seo'
 
 export const metadata = genPageMetadata({
-  title: 'DeenUp - Your Islamic Companion',
+  title: 'DeenUp — Learn Islam, One Swipe at a Time',
   description:
-    "Stay consistent with Salah, Quran, and community through DeenUp's AI-powered Islamic companion.",
+    'DeenUp turns doom-scrolling into learning — a fun, swipeable feed of bite-sized, scholar-approved Islamic knowledge. Build a daily habit and grow your Deen.',
   alternates: buildLanguageAlternates('/'),
 })
 
