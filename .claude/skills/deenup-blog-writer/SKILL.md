@@ -1,11 +1,11 @@
 ---
 name: deenup-blog-writer
-description: 'Generate SEO-optimized Islamic blog posts for deenup.app. Remote-safe version: uses a static hero image, no Gemini, no Google indexing. Internal links from deenup.app sitemap; external links from deenback.com and demimanifest.com sitemaps.'
+description: 'Generate SEO-optimized Islamic blog posts for deenup.app. Generates a per-slug linear-gradient hero image locally (no Gemini), no Google indexing. Internal links from deenup.app sitemap; external links from deenback.com and demimanifest.com sitemaps.'
 ---
 
 # DeenUp Blog Writer (remote)
 
-End-to-end pipeline for publishing SEO-optimized Islamic blog posts on deenup.app. This variant is designed to run in a remote CCR sandbox: all paths are repo-relative, image generation and Google indexing are skipped, and links are sourced from three live sitemaps.
+End-to-end pipeline for publishing SEO-optimized Islamic blog posts on deenup.app. This variant uses repo-relative paths, generates each post's hero image locally as a linear gradient (no external API), skips Google indexing, and sources links from three live sitemaps.
 
 ## Input
 
@@ -18,7 +18,8 @@ End-to-end pipeline for publishing SEO-optimized Islamic blog posts on deenup.ap
 ## Repo-relative paths
 
 - Blog posts: `data/blog/en/[SLUG].mdx`
-- Hero image (static, reused for every auto-generated post): `/static/images/hero.webp`
+- Hero image (generated per slug): `public/images/blog/[SLUG]/hero.webp`, referenced as `/images/blog/[SLUG]/hero.webp`
+- Hero generator: `.claude/skills/deenup-blog-writer/generate-hero-image.js`
 - Keyword source: `.claude/skills/deenup-blog-writer/keywords.csv`
 - Written tracker: `.claude/skills/deenup-blog-writer/written.csv`
 - Writing guidelines: `.claude/skills/deenup-blog-writer/references/writing-guidelines.md`
@@ -87,7 +88,7 @@ tags:
   - 'tag3'
 authors: ['mathias-yussif']
 draft: false
-images: ['/static/images/hero.webp']
+images: ['/images/blog/[SLUG]/hero.webp']
 layout: 'PostLayout'
 faqs:
   - question: 'Q1?'
@@ -98,8 +99,12 @@ faqs:
     answer: 'A3'
   - question: 'Q4?'
     answer: 'A4'
+  - question: 'Q5?'
+    answer: 'A5'
 ---
 ```
+
+Provide **5-7 FAQs**. Each answer must be self-contained (40–60 words) and restate the question's subject so it can be quoted standalone — this is what surfaces in AI Overviews and ChatGPT (rendered as `FAQPage` JSON-LD by the site).
 
 **YAML apostrophe safety:** if any single-quoted frontmatter value contains `'` (e.g. `Allah's`, `don't`), switch that value to double quotes. This breaks builds otherwise.
 
@@ -110,12 +115,15 @@ faqs:
 - Hero Image at the top:
   ```mdx
   <Image
-    src="/static/images/hero.webp"
+    src="/images/blog/[SLUG]/hero.webp"
     alt="[SEO alt text related to the keyword]"
     width={1200}
     height={630}
   />
   ```
+- **Answer capsule (REQUIRED):** right after the opening hook, add an H2 phrased as the title's question, then ONE self-contained 40–70 word paragraph that answers it directly with a concrete fact/citation. See GEO rules in `references/writing-guidelines.md`.
+- **One reference/comparison table** where the topic supports it (GFM tables render — e.g. 5 Pillars at a glance, Fard vs Sunnah vs Nafl, rakah counts, Hajj vs Umrah, zakat rates).
+- Phrase H2/H3 headers as the actual questions people/AI ask ("How many rakahs is Isha?"), not vague statements.
 - Embed `<AppDownloadCTA>` at least once mid-article, ideally again near the end with `placement="final"`.
 - Optional `<AppFeatureCards />` once if it fits.
 - **No `<YouTubeEmbed>`** in this remote variant (we can't verify video IDs reliably from the sandbox — skip it entirely).
@@ -127,11 +135,25 @@ faqs:
 - ≥1 external link from `demimanifest[]` (demimanifest.com blog).
 - ≥2 additional external links to authoritative Islamic sources (quran.com, sunnah.com, yaqeeninstitute.org, etc.).
 
-### Step 5: Proofread
+### Step 5: Generate hero image (local)
+
+Generate the hero **locally** with the bundled script — no API, no key. It renders a 1200x630 WebP linear gradient from DeenUp's warm terracotta/sand brand palette (gradient + film grain + serif title), deterministic from the slug.
+
+```bash
+node .claude/skills/deenup-blog-writer/generate-hero-image.js [SLUG] [palette] "[Article Title]"
+```
+
+- Pass the article's real title (3-6 words read best) so it renders correctly; omit to derive from the slug.
+- **Palettes**: `dawn`, `sunset`, `sand`, `ember`, `bloom`. Omit to auto-pick deterministically from the slug.
+- Output: `public/images/blog/[SLUG]/hero.webp`, referenced in frontmatter as `/images/blog/[SLUG]/hero.webp`.
+
+The script self-resolves `sharp` from the DeenUp project, then this skill's `node_modules`. If it reports `sharp is not installed`, run `npm i sharp --prefix .claude/skills/deenup-blog-writer` once. If generation still fails, log a warning and continue — the frontmatter image path is already correct; do NOT fail the pipeline.
+
+### Step 6: Proofread
 
 Remove robotic phrasing, repetitive openers ("Remember…", "Keep in mind…"), filler ("In today's world"), passive voice where active is clearer. Tone: knowledgeable friend, never preachy.
 
-### Step 6: Validate external links
+### Step 7: Validate external links
 
 For every external URL in the article:
 
@@ -141,7 +163,7 @@ curl -s -o /dev/null -w "%{http_code}" "[URL]"
 
 Drop any non-200. If dropping breaks a HARD requirement in Step 4, pick a replacement from the cached sitemap lists and re-validate.
 
-### Step 7: SEO validation
+### Step 8: SEO validation
 
 Pass/fail checklist:
 
@@ -152,16 +174,19 @@ Frontmatter:
 - [ ] summary 120-155 chars
 - [ ] tags 3-6
 - [ ] authors `['mathias-yussif']`
-- [ ] images `['/static/images/hero.webp']`
+- [ ] images `['/images/blog/[SLUG]/hero.webp']`
 - [ ] layout `'PostLayout'`
-- [ ] faqs 3-6
+- [ ] faqs 5-7, each answer self-contained
 - [ ] no single-quoted value contains an apostrophe
 
 Body:
 
 - [ ] no `# H1`
 - [ ] ≥3 `## H2` sections
-- [ ] hero `<Image>` at top pointing at `/static/images/hero.webp`
+- [ ] **answer capsule** (H2 question + self-contained 40–70 word answer) directly after the opening hook
+- [ ] **≥1 reference/comparison table** where the topic supports it
+- [ ] H2/H3 headers phrased as real questions where natural
+- [ ] hero `<Image>` at top pointing at `/images/blog/[SLUG]/hero.webp`
 - [ ] ≥1 `<AppDownloadCTA>`
 - [ ] ≥3 internal links from deenup.app sitemap
 - [ ] ≥1 external link to deenback.com (from sitemap)
@@ -173,11 +198,11 @@ Body:
 
 Fix any failure and re-check before moving on.
 
-### Step 8: Append to written.csv
+### Step 9: Append to written.csv
 
 Append `[keyword],[slug]` to `.claude/skills/deenup-blog-writer/written.csv`.
 
-### Step 9: Summary
+### Step 10: Summary
 
 Print:
 
@@ -202,7 +227,7 @@ Status:    READY
 - Always auto-pick next unwritten keyword unless a specific keyword is passed.
 - Never hallucinate hadith, verses, scholar names, statistics, or URLs.
 - Never embed a YouTube video in this remote variant.
-- Never generate an image — the hero is always `/static/images/hero.webp`.
+- Generate the hero locally per slug with `generate-hero-image.js`; if it fails, log a warning and continue (the frontmatter path is already correct).
 - Never skip link validation.
 - Apostrophes in single-quoted YAML will break the build — always scan before committing.
 - DeenUp voice: welcoming, knowledgeable, never preachy.
