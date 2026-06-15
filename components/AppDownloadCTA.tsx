@@ -15,10 +15,10 @@ const AppDownloadCTA = ({
     <h3 className="text-primary-700 dark:text-primary-300 mb-2 text-lg font-semibold">{title}</h3>
     <p className="mb-4 text-gray-600 dark:text-gray-400">{blurb}</p>
     <Link
-      href="https://apps.apple.com/tn/app/deen-back-daily-dua-dhikr/id6755876142"
+      href="https://chat.whatsapp.com/Ea023Ghn0PJ27Ijs6Fp?mode=wwt"
       className="bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 inline-block rounded-lg px-5 py-2.5 text-sm font-medium text-white"
     >
-      Download DeenUp — Free on iOS
+      Join the DeenUp waitlist
     </Link>
   </div>
 )
