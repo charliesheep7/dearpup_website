@@ -49,3 +49,6 @@ yarn-error.log*
 # SEO Blog Generator scripts
 # /seo-blog-generator
 prd-seogen.md
+
+# Skill-local installs (platform-specific, self-installed at runtime)
+.claude/skills/*/node_modules/

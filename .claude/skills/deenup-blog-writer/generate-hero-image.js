@@ -27,6 +27,7 @@
 const fs = require('fs')
 const path = require('path')
 const crypto = require('crypto')
+const { execSync } = require('child_process')
 
 const PROJECT_ROOT = '/Users/sihancheng/Projects/DeenUp-website'
 const SKILL_DIR = __dirname
@@ -317,6 +318,31 @@ function resolveSharp() {
   }
 }
 
+// Resolve sharp; if it is missing (e.g. a fresh CI/routine sandbox with no
+// node_modules), install it into this skill's own folder once and re-resolve.
+// This is what makes per-slug hero generation work in the cloud routine, which
+// checks out the repo without running `npm install`.
+function ensureSharp() {
+  let sharp = resolveSharp()
+  if (sharp) return sharp
+
+  console.error('sharp not found — installing into the skill (one-time, ~20s)...')
+  try {
+    execSync('npm install --no-audit --no-fund --loglevel=error', {
+      cwd: SKILL_DIR,
+      stdio: 'inherit',
+      timeout: 180000,
+    })
+  } catch (err) {
+    console.error(`Auto-install of sharp failed: ${err && err.message}`)
+    return null
+  }
+
+  // Clear require cache for any partial resolution, then try again.
+  sharp = resolveSharp()
+  return sharp
+}
+
 async function main() {
   const slug = process.argv[2]
   const paletteArg = process.argv[3]
@@ -328,11 +354,11 @@ async function main() {
     process.exit(1)
   }
 
-  const sharp = resolveSharp()
+  const sharp = ensureSharp()
   if (!sharp) {
-    console.error('Error: sharp is not installed.')
+    console.error('Error: sharp is not installed and auto-install failed.')
     console.error('Install it once into this skill so it always works:')
-    console.error(`  npm i sharp --prefix ${SKILL_DIR}`)
+    console.error(`  npm install --prefix ${SKILL_DIR}`)
     console.error(`Or install project deps in ${PROJECT_ROOT}.`)
     process.exit(1)
   }

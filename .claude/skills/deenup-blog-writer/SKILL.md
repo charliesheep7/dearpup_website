@@ -147,7 +147,11 @@ node .claude/skills/deenup-blog-writer/generate-hero-image.js [SLUG] [palette] "
 - **Palettes**: `dawn`, `sunset`, `sand`, `ember`, `bloom`. Omit to auto-pick deterministically from the slug.
 - Output: `public/images/blog/[SLUG]/hero.webp`, referenced in frontmatter as `/images/blog/[SLUG]/hero.webp`.
 
-The script self-resolves `sharp` from the DeenUp project, then this skill's `node_modules`. If it reports `sharp is not installed`, run `npm i sharp --prefix .claude/skills/deenup-blog-writer` once. If generation still fails, log a warning and continue — the frontmatter image path is already correct; do NOT fail the pipeline.
+**The script is self-healing.** A fresh routine sandbox checks out the repo with no `node_modules`, so on first run the script auto-installs `sharp` into the skill folder (~20s of npm output is normal — **let it finish; do NOT abandon this step or fall back to the static hero just because you see an install running**). When it prints `SUCCESS`, the image exists at `public/images/blog/[SLUG]/hero.webp`.
+
+**You MUST commit the generated image.** When staging the post, include the image directory — e.g. `git add data/blog/ public/images/blog/` — otherwise the post ships pointing at a file that isn't in the repo.
+
+Only if generation genuinely cannot succeed (e.g. no network in the sandbox) fall back to the shared static hero so the post never ships a broken image: set BOTH the frontmatter `images:` and the `<Image src>` to `/static/images/hero.webp`, note the fallback in your summary, and continue. Do NOT fail the pipeline.
 
 ### Step 6: Proofread
 
