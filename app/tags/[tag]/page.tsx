@@ -16,7 +16,7 @@ export async function generateMetadata(props: {
   const tag = decodeURI(params.tag)
   return genPageMetadata({
     title: tag,
-    description: `${tag} tags - ${process.env.NEXT_PUBLIC_SITE_NAME}`,
+    description: `Read articles about ${tag} on DeenUp — bite-sized, scholar-approved Islamic knowledge to help you grow your Deen, one swipe at a time.`,
     alternates: {
       languages: {
         en: `/tags/${tag}`,

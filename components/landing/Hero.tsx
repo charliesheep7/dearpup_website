@@ -9,9 +9,7 @@ interface HeroProps {
 
 export default function Hero({ lang = 'en', dict }: HeroProps) {
   const isRTL = lang === 'ar'
-  const appStoreUrl = 'https://apps.apple.com/tn/app/deen-back-daily-dua-dhikr/id6755876142'
-  const playStoreUrl =
-    'https://play.google.com/store/apps/details?id=com.tahirapp.development&referrer=utm_source%3Dwebsite%26utm_medium%3Dorganic%26utm_campaign%3Dofficial_site%26utm_content%3Ddownload_button'
+  const waitlistUrl = 'https://chat.whatsapp.com/Ea023Ghn0PJ27Ijs6Fp?mode=wwt'
 
   return (
     <section className="relative overflow-hidden">
@@ -28,43 +26,37 @@ export default function Hero({ lang = 'en', dict }: HeroProps) {
             <h1
               className={`text-[clamp(1.75rem,3.2vw,3rem)] leading-tight font-bold tracking-tight text-[--color-text] dark:text-white ${isRTL ? 'font-arabic' : ''}`}
             >
-              {dict?.hero?.tagline || 'Overcome Your Nafs. Return to Allah.'}
+              {dict?.hero?.tagline || 'Learn your Deen, one swipe at a time'}
             </h1>
 
             <p
               className={`text-base leading-relaxed text-gray-600 sm:text-lg dark:text-gray-300 ${isRTL ? 'font-arabic' : ''}`}
             >
               {dict?.hero?.subtitle ||
-                "Deen Back helps Muslims break free from haram habits through Qur'an SOS, daily dhikr, and a faith-centered community."}
+                'DeenUp turns the endless scroll into something that actually matters. Swipe through short, scholar-approved Islamic lessons, take quick quizzes, and build a daily streak — the fun, effortless way to grow your knowledge of Islam, a little every day.'}
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <a
-                href={appStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block transition-transform duration-200 hover:scale-105"
+            <div className={`flex flex-col gap-4 pt-2 ${isRTL ? 'items-end' : 'items-start'}`}>
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href={waitlistUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-2 rounded-2xl bg-[var(--color-accent-500)] px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:bg-[var(--color-accent-600)] ${isRTL ? 'font-arabic' : ''}`}
+                >
+                  {dict?.hero?.ctaPrimary || 'Join Waitlist'}
+                </a>
+                <span
+                  className={`inline-flex items-center gap-2 rounded-full border border-[--color-accent-200] bg-[--color-accent-100] px-4 py-2 text-sm font-semibold text-[--color-accent-700] dark:border-[--color-accent-800] dark:bg-[--color-accent-900] dark:text-[--color-accent-300] ${isRTL ? 'font-arabic' : ''}`}
+                >
+                  {dict?.cta?.badge || 'Coming Soon to iOS & Android'}
+                </span>
+              </div>
+              <span
+                className={`text-sm text-gray-500 dark:text-gray-400 ${isRTL ? 'font-arabic' : ''}`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/static/images/apple-app-store-badge.svg"
-                  alt="Download on the App Store"
-                  style={{ width: 'auto', height: '72px' }}
-                />
-              </a>
-              <a
-                href={playStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block transition-transform duration-200 hover:scale-105"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/static/images/google-play-badge.png"
-                  alt="Get it on Google Play"
-                  style={{ width: 'auto', height: '105px' }}
-                />
-              </a>
+                {dict?.hero?.appStatus || 'Join our WhatsApp community'}
+              </span>
             </div>
           </div>
 
@@ -72,7 +64,7 @@ export default function Hero({ lang = 'en', dict }: HeroProps) {
             <div className="relative mx-auto aspect-[4/5] w-full max-w-xl">
               <Image
                 src="/static/images/app_hero.webp"
-                alt="Deen Back App – Overcome Your Nafs"
+                alt="DeenUp app — a swipeable feed of bite-sized, scholar-approved Islamic lessons"
                 fill
                 className="object-contain"
                 priority

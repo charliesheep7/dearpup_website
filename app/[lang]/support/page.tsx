@@ -3,7 +3,7 @@ import SectionContainer from '@/components/SectionContainer'
 
 export const metadata = genPageMetadata({
   title: 'الدعم',
-  description: 'هل تحتاج مساعدة مع DeenBack؟ تواصل مع الدعم عبر vip@deenup.app.',
+  description: 'هل تحتاج مساعدة مع DeenUp؟ تواصل مع الدعم عبر hello@infinique.org.',
   alternates: buildLanguageAlternates('/support', { currentLanguage: 'ar' }),
 })
 
@@ -17,8 +17,8 @@ export default function SupportPageAr() {
         <h2>التواصل</h2>
         <p>
           <strong>البريد الإلكتروني:</strong>{' '}
-          <a href="mailto:vip@deenup.app" dir="ltr">
-            vip@deenup.app
+          <a href="mailto:hello@infinique.org" dir="ltr">
+            hello@infinique.org
           </a>
         </p>
 

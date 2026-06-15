@@ -189,8 +189,28 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
         body: seoBotPost?.body.raw,
       }
 
+  const postUrl = `${siteMetadata.siteUrl}/blog/${currentPost.slug}`
   const jsonLd = currentPost.structuredData || {}
   jsonLd['author'] = buildJsonLdAuthors(authorDetails)
+  jsonLd['publisher'] = {
+    '@type': 'Organization',
+    name: 'DeenUp',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteMetadata.siteUrl}/static/favicons/android-chrome-512x512.png`,
+    },
+  }
+  jsonLd['mainEntityOfPage'] = { '@type': 'WebPage', '@id': postUrl }
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteMetadata.siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteMetadata.siteUrl}/blog` },
+      { '@type': 'ListItem', position: 3, name: currentPost.title, item: postUrl },
+    ],
+  }
 
   const Layout = layouts[currentPost.layout || defaultLayout]
 
@@ -199,6 +219,10 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <Layout content={mainContent} authorDetails={authorDetails} next={next} prev={prev}>
         {isSeoBotPost && seoBotPost ? (

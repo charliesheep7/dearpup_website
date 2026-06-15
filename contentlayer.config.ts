@@ -140,7 +140,9 @@ export const Blog = defineDocumentType(() => ({
         dateModified: doc.lastmod || doc.date,
         description: doc.summary,
         image: doc.images ? doc.images[0] : siteMetadata.socialBanner,
-        url: `${siteMetadata.siteUrl}/${doc._raw.flattenedPath}`,
+        // Strip the language folder so the URL matches the real route
+        // (blog/en/my-post → blog/my-post), not a 404 like /blog/en/my-post
+        url: `${siteMetadata.siteUrl}/${doc._raw.flattenedPath.replace(/^blog\/(en|ar)\//, 'blog/')}`,
       }),
     },
   },

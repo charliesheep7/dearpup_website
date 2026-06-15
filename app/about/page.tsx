@@ -6,6 +6,8 @@ import { genPageMetadata, buildLanguageAlternates } from 'app/seo'
 
 export const metadata = genPageMetadata({
   title: 'About',
+  description:
+    'Meet the team behind DeenUp — the people building a fun, swipeable way to learn Islam through bite-sized, scholar-approved lessons.',
   alternates: buildLanguageAlternates('/about'),
 })
 

@@ -105,7 +105,7 @@ export default function PrivacyPageAr() {
           <li>طلب المساعدة عن طريق الاتصال بنا إذا لزم الأمر</li>
         </ul>
         <p>
-          <strong>البريد الإلكتروني:</strong> vip@deenup.app
+          <strong>البريد الإلكتروني:</strong> hello@infinique.org
         </p>
 
         <h2>التغييرات على هذه السياسة</h2>
@@ -116,7 +116,7 @@ export default function PrivacyPageAr() {
 
         <h2>اتصل بنا</h2>
         <p>إذا كان لديك أي أسئلة، يرجى الاتصال بـ:</p>
-        <p>📩 vip@deenup.app</p>
+        <p>📩 hello@infinique.org</p>
       </div>
     </SectionContainer>
   )
