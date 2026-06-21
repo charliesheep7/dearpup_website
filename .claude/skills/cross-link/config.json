@@ -1,0 +1,44 @@
+{
+  "_comment": "Cross-site link routine for the 3 owned Muslim sites. Strategy: symmetric (every site links the other two roughly equally). Light volume (3-5/day across the whole network). Footprint-safe: in-body contextual links only, relevance-gated, capped.",
+  "strategy": "symmetric",
+  "daily_min": 3,
+  "daily_max": 5,
+  "per_ordered_pair_weekly_cap": 5,
+  "max_inbound_per_target_url": 3,
+  "relevance_threshold": 0.30,
+  "min_source_body_len": 600,
+  "ledger_repo": "deenup",
+  "ledger_path_in_repo": "seo/cross-link-ledger.json",
+  "sites": [
+    {
+      "key": "deenup",
+      "name": "DeenUp",
+      "base_url": "https://www.deenup.app",
+      "github": "https://github.com/charliesheep7/deenup-website.git",
+      "local_path": "/Users/sihancheng/Projects/DeenUp-website",
+      "blog_dir": "data/blog",
+      "langs": ["en", "ar"],
+      "voice": "welcoming, knowledgeable, never preachy"
+    },
+    {
+      "key": "deenback",
+      "name": "DeenBack",
+      "base_url": "https://www.deenback.com",
+      "github": "https://github.com/charliesheep7/deenback-website.git",
+      "local_path": "/Users/sihancheng/Projects/deenback",
+      "blog_dir": "data/blog",
+      "langs": ["en", "ar"],
+      "voice": "motivating, disciplined, self-improvement ('beat your nafs')"
+    },
+    {
+      "key": "islamful",
+      "name": "Islamful",
+      "base_url": "https://www.islamful.com",
+      "github": "https://github.com/charliesheep7/islamful.git",
+      "local_path": "/Users/sihancheng/Projects/islamful",
+      "blog_dir": "data/blog",
+      "langs": ["en", "ar"],
+      "voice": "clear, practical, accessible"
+    }
+  ]
+}
