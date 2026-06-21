@@ -1,0 +1,46 @@
+[
+  {
+    "date": "2026-06-21",
+    "source_site": "deenup",
+    "source_slug": "last-10-nights-of-ramadan",
+    "source_url": "https://www.deenup.app/blog/last-10-nights-of-ramadan",
+    "source_lang": "en",
+    "target_site": "islamful",
+    "target_url": "https://www.islamful.com/blog/dua-for-laylatul-qadr",
+    "anchor_text": "Allahumma innaka afuwwun tuhibb al-afwa fa-fu anni",
+    "score": 3.056
+  },
+  {
+    "date": "2026-06-21",
+    "source_site": "deenback",
+    "source_slug": "dua-for-breaking-fast",
+    "source_url": "https://www.deenback.com/blog/dua-for-breaking-fast",
+    "source_lang": "en",
+    "target_site": "deenup",
+    "target_url": "https://www.deenup.app/blog/dua-for-breaking-fast",
+    "anchor_text": "the fasting person's dua at iftar",
+    "score": 2.317
+  },
+  {
+    "date": "2026-06-21",
+    "source_site": "deenback",
+    "source_slug": "is-kombucha-haram",
+    "source_url": "https://www.deenback.com/blog/is-kombucha-haram",
+    "source_lang": "en",
+    "target_site": "islamful",
+    "target_url": "https://www.islamful.com/blog/is-kombucha-haram",
+    "anchor_text": "the majority scholarly position",
+    "score": 2.423
+  },
+  {
+    "date": "2026-06-21",
+    "source_site": "islamful",
+    "source_slug": "dua-for-breaking-fast",
+    "source_url": "https://www.islamful.com/blog/dua-for-breaking-fast",
+    "source_lang": "en",
+    "target_site": "deenup",
+    "target_url": "https://www.deenup.app/blog/breaking-the-fast-properly",
+    "anchor_text": "Breaking the fast with something light before Maghrib prayer",
+    "score": 2.5
+  }
+]
