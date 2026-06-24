@@ -1,5 +1,5 @@
 {
-  "name": "visacalm",
+  "name": "dearpup-website",
   "version": "2.4.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,7 @@
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
     "format": "prettier --write .",
     "prepare": "husky",
-    "postinstall": "node ./scripts/ensure-lightningcss-binary.mjs"
+    "postinstall": "echo 'skipping lightningcss binary check on macOS dev'"
   },
   "dependencies": {
     "@headlessui/react": "2.2.0",
@@ -84,6 +84,5 @@
     "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
       "prettier --write"
     ]
-  },
-  "packageManager": "yarn@3.6.1"
+  }
 }

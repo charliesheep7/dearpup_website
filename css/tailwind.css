@@ -14,38 +14,38 @@
     var(--font-noto-sans-arabic), var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-dm-serif), ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
 
-  /* Colors - DeenUp Brand Palette */
+  /* Colors - DearPup Brand Palette */
 
-  /* Accent color scale (warm terracotta) - Primary brand color */
-  --color-accent-50: #fdefe9;
-  --color-accent-100: #f9dfd4;
-  --color-accent-200: #f2c2af;
-  --color-accent-300: #eaa287;
-  --color-accent-400: #e38f72;
-  --color-accent-500: #d97757;
-  --color-accent-600: #c66547;
-  --color-accent-700: #a94e36;
-  --color-accent-800: #8a3e2c;
-  --color-accent-900: #6e3123;
-  --color-accent-950: #571f18;
+  /* Accent color scale (warm amber/golden) - Primary brand color */
+  --color-accent-50: #fffbeb;
+  --color-accent-100: #fef3c7;
+  --color-accent-200: #fde68a;
+  --color-accent-300: #fcd34d;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+  --color-accent-700: #b45309;
+  --color-accent-800: #92400e;
+  --color-accent-900: #78350f;
+  --color-accent-950: #451a03;
 
   /* Map primary to accent for compatibility */
-  --color-primary-50: #fdefe9;
-  --color-primary-100: #f9dfd4;
-  --color-primary-200: #f2c2af;
-  --color-primary-300: #eaa287;
-  --color-primary-400: #e38f72;
-  --color-primary-500: #d97757;
-  --color-primary-600: #c66547;
-  --color-primary-700: #a94e36;
-  --color-primary-800: #8a3e2c;
-  --color-primary-900: #6e3123;
-  --color-primary-950: #571f18;
+  --color-primary-50: #fffbeb;
+  --color-primary-100: #fef3c7;
+  --color-primary-200: #fde68a;
+  --color-primary-300: #fcd34d;
+  --color-primary-400: #fbbf24;
+  --color-primary-500: #f59e0b;
+  --color-primary-600: #d97706;
+  --color-primary-700: #b45309;
+  --color-primary-800: #92400e;
+  --color-primary-900: #78350f;
+  --color-primary-950: #451a03;
 
-  /* Neutral colors - Warm grays derived from brand colors */
-  --color-bg: #faf9f5;
-  --color-surface: #f0eee6;
-  --color-text: #3d3d3a;
+  /* Neutral colors - Warm cream derived from brand colors */
+  --color-bg: #fffdf7;
+  --color-surface: #fef9ee;
+  --color-text: #3d3a2e;
 
   /* Extended neutral scale for flexibility */
   --color-gray-50: #faf9f5;

@@ -1,49 +1,47 @@
 'use client'
 import { useState } from 'react'
 import { ChevronDown, HelpCircle } from 'lucide-react'
-import type { Dictionary } from '@/types/dictionary'
-
-interface FAQProps {
-  lang?: string
-  dict?: Dictionary
-}
 
 const faqs = [
   {
-    question: 'What exactly is DeenUp?',
+    question: 'What is DearPup?',
     answer:
-      "DeenUp is a learning app for Islamic knowledge — think Duolingo for your Deen, or a halal alternative to endless TikTok scrolling. Instead of doom-scrolling, you swipe through short, scholar-approved lessons, take quick quizzes, and build a daily learning streak. It's designed to make growing your Islamic knowledge fun, simple, and consistent.",
+      "DearPup is a daily care companion for dog owners. It combines an AI-powered food scanner, a personalized care plan based on your dog's breed and age, and a habit tracker that shows you the real impact of small daily habits on your dog's lifespan and health score.",
   },
   {
-    question: 'How is the content kept Islamically accurate?',
+    question: 'How does the food scanner work?',
     answer:
-      "Every lesson on DeenUp is rooted in the Quran and authentic Sunnah and reviewed by qualified scholars before it goes live. We don't use AI or algorithms to generate religious rulings — technology only helps us organize and deliver trustworthy knowledge. You can always see the sources behind what you learn.",
+      "Point your phone's camera at any dog food label — kibble, wet food, treats. DearPup's AI reads the ingredients and nutrition info, then gives an A through F grade, a safety rating (Safe, Caution, or Unsafe), a macro breakdown, and a plain-English explanation of what's good or concerning. No guesswork.",
   },
   {
-    question: 'Is DeenUp good for new Muslims and reverts?',
+    question: 'How is the care plan personalized to my dog?',
     answer:
-      'Absolutely. DeenUp meets you wherever you are. Bite-sized lessons start from the fundamentals and build up gradually, so new Muslims and reverts can learn the basics at their own pace — without judgment and without feeling overwhelmed. Lifelong Muslims will find plenty to deepen their knowledge too.',
+      "After you enter your dog's breed, age, sex, and weight — and complete a short lifestyle quiz — DearPup calculates their baseline lifespan and builds a daily care loop specific to their needs. Different breeds have different baselines, and the quiz captures real habits that affect the math.",
   },
   {
-    question: 'How is this different from just scrolling social media?',
+    question: 'Can I add more than one dog?',
     answer:
-      "DeenUp gives you the same easy, swipeable experience you're used to — but every swipe leaves you with beneficial knowledge instead of wasted time. There's no doom-scrolling, no harmful content, and no algorithm pulling you toward distraction. It's screen time that actually grows your Deen.",
+      'Yes. You can add multiple dogs and each gets their own profile, care plan, and health data completely separate from the others. Switch between dogs from the profile screen.',
   },
   {
-    question: 'What languages does DeenUp support?',
+    question: "Is my dog's data private?",
     answer:
-      'DeenUp currently supports English and Arabic, with the interface automatically switching to a right-to-left (RTL) layout for Arabic. More languages may be added as the community grows.',
+      "Completely. Your dog's data lives on your device first, synced privately to your account. We have no ads, no third-party data sharing, and no selling your information. Local-first, privacy-first.",
+  },
+  {
+    question: 'Is DearPup free?',
+    answer:
+      "DearPup is free to download with core features available at no cost. Scan your first foods, start your daily loop, and track your dog's health score — all free. Premium features unlock the full lifespan model, unlimited scans, and advanced analytics.",
   },
 ]
 
-export default function FAQ({ lang = 'en', dict }: FAQProps) {
+export default function FAQ() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
-  const faqItems = dict?.faq?.items || faqs
 
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqItems.map((faq) => ({
+    mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
@@ -63,28 +61,21 @@ export default function FAQ({ lang = 'en', dict }: FAQProps) {
         <div className="mb-16 text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[--color-accent-200] bg-[--color-accent-100] px-4 py-2 dark:border-[--color-accent-800] dark:bg-[--color-accent-900]">
             <HelpCircle className="h-4 w-4 text-[--color-accent-600] dark:text-[--color-accent-400]" />
-            <span
-              className={`text-sm font-semibold text-[--color-accent-700] dark:text-[--color-accent-300] ${lang === 'ar' ? 'font-arabic' : ''}`}
-            >
-              {dict?.faq?.badge || 'FAQ'}
+            <span className="text-sm font-semibold text-[--color-accent-700] dark:text-[--color-accent-300]">
+              FAQ
             </span>
           </div>
-          <h2
-            className={`mb-4 text-3xl font-bold text-[--color-text] sm:text-4xl lg:text-5xl dark:text-white ${lang === 'ar' ? 'font-arabic' : ''}`}
-          >
-            {dict?.faq?.heading || 'Frequently asked questions'}
+          <h2 className="mb-4 text-3xl font-bold text-[--color-text] sm:text-4xl lg:text-5xl dark:text-white">
+            Frequently asked questions
           </h2>
-          <p
-            className={`text-lg text-gray-600 dark:text-gray-300 ${lang === 'ar' ? 'font-arabic' : ''}`}
-          >
-            {dict?.faq?.subtitle || 'Everything you need to know about DeenUp'}
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            Everything you need to know about DearPup
           </p>
         </div>
 
         <div className="space-y-4">
-          {faqItems.map((faq, index) => {
+          {faqs.map((faq, index) => {
             const isExpanded = expandedIndex === index
-
             return (
               <div
                 key={index}
@@ -98,9 +89,7 @@ export default function FAQ({ lang = 'en', dict }: FAQProps) {
                   onClick={() => setExpandedIndex(isExpanded ? null : index)}
                   className="flex w-full items-start justify-between gap-4 px-6 py-5 text-left"
                 >
-                  <span
-                    className={`pr-4 text-lg font-semibold text-[--color-text] dark:text-white ${lang === 'ar' ? 'font-arabic' : ''}`}
-                  >
+                  <span className="pr-4 text-lg font-semibold text-[--color-text] dark:text-white">
                     {faq.question}
                   </span>
                   <ChevronDown
@@ -112,11 +101,7 @@ export default function FAQ({ lang = 'en', dict }: FAQProps) {
 
                 {isExpanded && (
                   <div className="animate-fade-in px-6 pb-5">
-                    <p
-                      className={`leading-relaxed text-gray-600 dark:text-gray-300 ${lang === 'ar' ? 'font-arabic' : ''}`}
-                    >
-                      {faq.answer}
-                    </p>
+                    <p className="leading-relaxed text-gray-600 dark:text-gray-300">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -124,20 +109,26 @@ export default function FAQ({ lang = 'en', dict }: FAQProps) {
           })}
         </div>
 
-        {/* Additional help */}
         <div className="mt-12 rounded-2xl border border-gray-200 bg-gradient-to-br from-[--color-surface] to-[--color-bg] p-8 text-center dark:border-gray-700 dark:from-gray-800 dark:to-gray-900">
-          <p
-            className={`mb-4 text-lg text-black dark:text-white ${lang === 'ar' ? 'font-arabic' : ''}`}
-          >
-            {dict?.faq?.stillHaveQuestions || 'Still have questions?'}
+          <p className="mb-2 text-lg font-semibold text-[--color-text] dark:text-white">
+            Still have questions?
+          </p>
+          <p className="mb-6 text-gray-600 dark:text-gray-400">
+            Reach us at{' '}
+            <a
+              href="mailto:hello@dearpup.app"
+              className="text-[--color-accent-600] hover:underline"
+            >
+              hello@dearpup.app
+            </a>
           </p>
           <a
-            href="https://chat.whatsapp.com/Ea023Ghn0PJ27Iji2Ms6Fp?mode=wwt"
+            href="https://apps.apple.com/app/dearpup"
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2 rounded-xl bg-[var(--color-accent-500)] px-10 py-4 text-xl font-bold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:bg-[var(--color-accent-600)] ${lang === 'ar' ? 'font-arabic' : ''}`}
+            className="inline-flex items-center gap-2 rounded-xl bg-[var(--color-accent-500)] px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:bg-[var(--color-accent-600)]"
           >
-            {dict?.faq?.contactSupport || 'Join Waitlist'}
+            Download DearPup Free
           </a>
         </div>
       </div>

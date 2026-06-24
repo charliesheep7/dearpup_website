@@ -4,7 +4,7 @@ import SectionContainer from '@/components/SectionContainer'
 export const metadata = genPageMetadata({
   title: 'Terms of Service',
   description:
-    'Read the rules, acceptable use guidelines, and legal terms that govern your use of the DeenUp app.',
+    'Read the rules, acceptable use guidelines, and legal terms that govern your use of the DearPup app.',
   alternates: buildLanguageAlternates('/terms'),
 })
 
@@ -17,9 +17,9 @@ export default function TermsPage() {
           <strong>Last updated: [Jan 29, 2026]</strong>
         </p>
         <p>
-          Welcome to DeenUp. Please read these Terms of Service ("Terms") carefully. By accessing or
-          using DeenUp's mobile application or related services ("Services"), you agree to be bound
-          by these Terms. If you do not agree, please stop using the Services.
+          Welcome to DearPup. Please read these Terms of Service ("Terms") carefully. By accessing
+          or using DearPup's mobile application or related services ("Services"), you agree to be
+          bound by these Terms. If you do not agree, please stop using the Services.
         </p>
 
         <h2>1. Eligibility</h2>
@@ -31,7 +31,7 @@ export default function TermsPage() {
         <h2>2. Your Account</h2>
         <p>
           You may sign in using email, Apple, or Google. You are responsible for maintaining the
-          confidentiality of your login information. Notify us immediately at hello@infinique.org if
+          confidentiality of your login information. Notify us immediately at hello@dearpup.app if
           you believe your account has been compromised.
         </p>
         <p>
@@ -43,7 +43,7 @@ export default function TermsPage() {
         <p>
           We grant you a personal, limited, non-exclusive, non-transferable, revocable license to
           use the Services for personal and non-commercial purposes. All rights not expressly
-          granted are reserved by DeenUp.
+          granted are reserved by DearPup.
         </p>
         <p>You may not copy, modify, distribute, sell, or lease any part of the Services.</p>
 
@@ -71,20 +71,20 @@ export default function TermsPage() {
 
         <h2>5. Sensitive Religious Content and Respect</h2>
         <p>
-          DeenUp includes religious themes that some users may find sensitive. You agree to engage
+          DearPup includes religious themes that some users may find sensitive. You agree to engage
           respectfully and not use the Services to attack others' beliefs, provoke hostility, or
           promote sectarian conflict.
         </p>
 
         <h2>6. User Content and Moderation</h2>
         <p>
-          If you submit content (for example, messages or journal text), you grant DeenUp a
+          If you submit content (for example, messages or journal text), you grant DearPup a
           worldwide, non-exclusive, royalty-free license to host and process it solely to provide
           and improve the Services.
         </p>
         <p>
           We may review, remove, or restrict content that violates these Terms or legal
-          requirements. You may report concerns to hello@infinique.org.
+          requirements. You may report concerns to hello@dearpup.app.
         </p>
 
         <h2>7. AI-Generated Content and No Professional Advice</h2>
@@ -118,7 +118,7 @@ export default function TermsPage() {
           Some features require a paid subscription. Payments, billing, and refunds are handled by
           Apple App Store or Google Play.
         </p>
-        <p>DeenUp does not collect or store your full payment card information.</p>
+        <p>DearPup does not collect or store your full payment card information.</p>
         <p>You can manage your subscription through your platform account settings.</p>
 
         <h2>11. Third-Party Services</h2>
@@ -130,12 +130,12 @@ export default function TermsPage() {
 
         <h2>12. Intellectual Property</h2>
         <p>
-          DeenUp, including its name, logo, design, software, and content, is owned by DeenUp or its
-          licensors and protected by intellectual property laws.
+          DearPup, including its name, logo, design, software, and content, is owned by DearPup or
+          its licensors and protected by intellectual property laws.
         </p>
         <p>
-          If you believe content infringes your rights, contact hello@infinique.org and we will
-          review promptly.
+          If you believe content infringes your rights, contact hello@dearpup.app and we will review
+          promptly.
         </p>
 
         <h2>13. Safety Measures and Enforcement</h2>
@@ -157,21 +157,22 @@ export default function TermsPage() {
         <p>To the maximum extent permitted by law:</p>
         <ul>
           <li>
-            DeenUp is not liable for indirect, incidental, special, consequential, or punitive
+            DearPup is not liable for indirect, incidental, special, consequential, or punitive
             damages
           </li>
           <li>
-            DeenUp is not liable for lost data, lost profits, emotional harm, or reputational damage
+            DearPup is not liable for lost data, lost profits, emotional harm, or reputational
+            damage
           </li>
           <li>
             Our total liability for any claim will not exceed: The greater of 50 USD or the amount
-            you paid DeenUp in the 12 months before the event.
+            you paid DearPup in the 12 months before the event.
           </li>
         </ul>
 
         <h2>16. Indemnification</h2>
         <p>
-          You agree to defend and indemnify DeenUp and its team from any claims, damages, or
+          You agree to defend and indemnify DearPup and its team from any claims, damages, or
           expenses arising from your use of the Services or your violation of these Terms.
         </p>
 
@@ -193,13 +194,13 @@ export default function TermsPage() {
 
         <h2>20. Entire Agreement</h2>
         <p>
-          These Terms constitute the complete agreement between you and DeenUp regarding the
+          These Terms constitute the complete agreement between you and DearPup regarding the
           Services. If any part is found unenforceable, the remaining parts still apply.
         </p>
 
         <h2>21. Contact Us</h2>
         <p>If you have questions, concerns, or complaints, contact:</p>
-        <p>📩 hello@infinique.org</p>
+        <p>📩 hello@dearpup.app</p>
       </div>
     </SectionContainer>
   )

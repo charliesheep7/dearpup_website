@@ -1,73 +1,63 @@
 'use client'
 
 import clsx from 'clsx'
-import { Sparkles, Flame, ChevronDown, ShieldCheck } from 'lucide-react'
+import { Camera, Heart, TrendingUp, ChevronDown } from 'lucide-react'
 import { useState } from 'react'
-import type { Dictionary } from '@/types/dictionary'
-
-interface TestimonialsProps {
-  lang?: string
-  dict?: Dictionary
-}
 
 const testimonials = [
   {
-    category: 'Spiritual Growth',
-    icon: Sparkles,
+    category: 'Food Safety',
+    icon: Camera,
+    iconColor: 'text-amber-600 dark:text-amber-400',
+    bgColor: 'bg-amber-50 dark:bg-amber-900/20',
+    borderColor: 'border-amber-200 dark:border-amber-800',
+    name: 'Jessica T.',
+    title: 'Golden Retriever mom',
+    quote:
+      "I scanned Buddy's food and got a D grade. I had no idea. Switched brands the same week — he has so much more energy now.",
+    fullStory:
+      "I honestly thought I was buying good food because it looked premium. DearPup scanned it in seconds and showed me the ingredient breakdown — the first three were corn fillers. The vet note explained it clearly without any judgment. I switched to a brand that got an A, and within a month Buddy's coat was shinier and he was way more playful. I wish I'd had this years ago.",
+  },
+  {
+    category: 'Longevity',
+    icon: TrendingUp,
     iconColor: 'text-emerald-600 dark:text-emerald-400',
     bgColor: 'bg-emerald-50 dark:bg-emerald-900/20',
     borderColor: 'border-emerald-200 dark:border-emerald-800',
-    name: 'Aisha M.',
-    title: 'New Revert',
+    name: 'Marcus R.',
+    title: 'Labrador owner',
     quote:
-      'As a revert, DeenUp taught me the basics one short lesson at a time. It never felt overwhelming.',
+      "Seeing '1.8 recoverable years' on the lifespan screen was the wake-up call I needed. Now I actually do the daily loop.",
     fullStory:
-      "When I embraced Islam I didn't know where to start, and most resources felt intimidating. DeenUp broke everything into small, swipeable lessons I could finish in a minute. Little by little I learned how to pray, the meaning of verses, and the stories of the Prophets. The quizzes helped it stick, and the daily streak kept me coming back. For the first time, learning my Deen felt doable.",
+      "My Lab Max is 7, and when the app showed me he had a below-average health score and that better habits could reclaim nearly 2 years of his life, I just... sat with that for a minute. It wasn't guilt-trippy, it was honest data. The daily loop only takes 5 minutes and I do it while drinking my morning coffee. His vet last month said his vitals looked better than a year ago.",
   },
   {
-    category: 'Daily Habit',
-    icon: Flame,
-    iconColor: 'text-blue-600 dark:text-blue-400',
-    bgColor: 'bg-blue-50 dark:bg-blue-900/20',
-    borderColor: 'border-blue-200 dark:border-blue-800',
-    name: 'Omar K.',
-    title: 'Working Professional',
+    category: 'Daily Habits',
+    icon: Heart,
+    iconColor: 'text-rose-600 dark:text-rose-400',
+    bgColor: 'bg-rose-50 dark:bg-rose-900/20',
+    borderColor: 'border-rose-200 dark:border-rose-800',
+    name: 'Priya K.',
+    title: 'Multi-dog household',
     quote:
-      'I traded doom-scrolling for DeenUp. Now my spare minutes actually grow my Deen — 60-day streak and counting.',
+      'Two dogs, two separate care plans — both perfectly tailored. The streak feature keeps me actually consistent.',
     fullStory:
-      "I used to open TikTok the moment I had a free minute and lose an hour without noticing. Now I open DeenUp instead. The feed is just as easy to scroll, but every lesson teaches me something real. Building a streak made it addictive in the best way, and after two months I've learned more than I did in years. It completely changed my screen time.",
-  },
-  {
-    category: 'Fun Learning',
-    icon: ShieldCheck,
-    iconColor: 'text-purple-600 dark:text-purple-400',
-    bgColor: 'bg-purple-50 dark:bg-purple-900/20',
-    borderColor: 'border-purple-200 dark:border-purple-800',
-    name: 'Fatima S.',
-    title: 'University Student',
-    quote: "It's like Duolingo for Islam — the quizzes and levels make learning genuinely fun.",
-    fullStory:
-      "I always wanted to learn more about my religion but textbooks put me to sleep. DeenUp turned it into a game — short lessons, quick quizzes, levels to unlock, and a streak I don't want to break. Between classes I'll do a few lessons without even thinking of it as studying. I've learned so much and it never feels like a chore.",
+      'I have a senior Beagle and a young Husky — completely different needs. DearPup built them each their own daily loop and the reminders are separate. The 14-day chart made me realize I was consistent Mon-Fri but dropping the ball on weekends. Small awareness, big change. 45-day streak now and both dogs are doing great.',
   },
 ]
 
-export default function Testimonials({ lang = 'en', dict }: TestimonialsProps) {
+export default function Testimonials() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
 
   return (
     <section className="bg-gradient-to-b from-white to-[--color-bg] py-20 sm:py-28 dark:from-gray-950 dark:to-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
-          <h2
-            className={`mb-4 text-3xl font-bold text-[--color-text] sm:text-4xl lg:text-5xl dark:text-white ${lang === 'ar' ? 'font-arabic' : ''}`}
-          >
-            {dict?.testimonials?.heading || 'Stories from the Ummah'}
+          <h2 className="mb-4 text-3xl font-bold text-[--color-text] sm:text-4xl lg:text-5xl dark:text-white">
+            Stories from dog owners
           </h2>
-          <p
-            className={`mx-auto max-w-2xl text-lg text-gray-600 sm:text-xl dark:text-gray-300 ${lang === 'ar' ? 'font-arabic' : ''}`}
-          >
-            {dict?.testimonials?.subtitle ||
-              'See how DeenUp is helping Muslims learn and grow every day'}
+          <p className="mx-auto max-w-2xl text-lg text-gray-600 sm:text-xl dark:text-gray-300">
+            Real results from real people who decided to do more than just keep their dog alive
           </p>
         </div>
 
@@ -86,7 +76,6 @@ export default function Testimonials({ lang = 'en', dict }: TestimonialsProps) {
                   isExpanded && ['ring-2', 'shadow-2xl', 'ring-[--color-accent-500]']
                 )}
               >
-                {/* Icon and category badge */}
                 <div className="mb-4 flex items-center gap-3">
                   <div
                     className={`rounded-lg p-2 ${testimonial.bgColor} border ${testimonial.borderColor}`}
@@ -100,14 +89,12 @@ export default function Testimonials({ lang = 'en', dict }: TestimonialsProps) {
                   </span>
                 </div>
 
-                {/* Quote */}
                 <blockquote className="mb-4">
                   <p className="leading-relaxed text-gray-700 italic dark:text-gray-200">
                     "{testimonial.quote}"
                   </p>
                 </blockquote>
 
-                {/* Expanded story */}
                 {isExpanded && (
                   <div className="animate-fade-in mb-4 rounded-lg border border-gray-200 bg-white/50 p-4 dark:border-gray-700 dark:bg-gray-800/50">
                     <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
@@ -116,7 +103,6 @@ export default function Testimonials({ lang = 'en', dict }: TestimonialsProps) {
                   </div>
                 )}
 
-                {/* Author info */}
                 <div className="mt-4 flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-700">
                   <div>
                     <p className="font-semibold text-[--color-text] dark:text-white">
@@ -126,14 +112,11 @@ export default function Testimonials({ lang = 'en', dict }: TestimonialsProps) {
                   </div>
                 </div>
 
-                {/* Read more button */}
                 <button
                   onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                  className={`mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-[--color-accent-600] transition-all duration-200 hover:border-[--color-accent-300] hover:bg-[--color-surface] dark:border-gray-700 dark:bg-gray-800 dark:text-[--color-accent-400] dark:hover:border-[--color-accent-700] dark:hover:bg-gray-700 ${lang === 'ar' ? 'font-arabic' : ''}`}
+                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-[--color-accent-600] transition-all duration-200 hover:border-[--color-accent-300] hover:bg-[--color-surface] dark:border-gray-700 dark:bg-gray-800 dark:text-[--color-accent-400] dark:hover:border-[--color-accent-700] dark:hover:bg-gray-700"
                 >
-                  {isExpanded
-                    ? dict?.testimonials?.showLess || 'Show less'
-                    : dict?.testimonials?.readMore || 'Read full story'}
+                  {isExpanded ? 'Show less' : 'Read full story'}
                   <ChevronDown
                     className={`h-4 w-4 transition-transform duration-200 ${
                       isExpanded ? 'rotate-180' : ''

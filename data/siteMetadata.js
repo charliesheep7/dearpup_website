@@ -1,16 +1,16 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'DeenUp — Learn Islam, One Swipe at a Time',
-  author: 'DeenUp',
-  authorSlug: 'mathias-yussif',
-  headerTitle: 'DeenUp',
+  title: 'DearPup — Give Your Dog More Good Years',
+  author: 'DearPup',
+  authorSlug: 'sih-c',
+  headerTitle: 'DearPup',
   description:
-    'Turn scrolling into learning with DeenUp — a fun, swipeable feed of bite-sized, scholar-approved Islamic knowledge. Grow your Deen a little every day.',
+    "DearPup is the daily care companion that turns small habits into a longer, healthier life for your dog. AI-powered food scanner, personalized care plans, and lifespan tracking — built for your dog's breed, age, and lifestyle.",
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://www.deenup.app',
+  siteUrl: 'https://www.dearpup.app',
   siteRepo: '',
-  siteLogo: `${process.env.BASE_PATH || ''}/static/images/Apple/App_store_1024_1x.svg`,
+  siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   mastodon: '',
   email: '',
