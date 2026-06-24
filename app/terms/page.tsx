@@ -31,7 +31,7 @@ export default function TermsPage() {
         <h2>2. Your Account</h2>
         <p>
           You may sign in using email, Apple, or Google. You are responsible for maintaining the
-          confidentiality of your login information. Notify us immediately at hello@dearpup.app if
+          confidentiality of your login information. Notify us immediately at hello@infinique.org if
           you believe your account has been compromised.
         </p>
         <p>
@@ -84,7 +84,7 @@ export default function TermsPage() {
         </p>
         <p>
           We may review, remove, or restrict content that violates these Terms or legal
-          requirements. You may report concerns to hello@dearpup.app.
+          requirements. You may report concerns to hello@infinique.org.
         </p>
 
         <h2>7. AI-Generated Content and No Professional Advice</h2>
@@ -134,8 +134,8 @@ export default function TermsPage() {
           its licensors and protected by intellectual property laws.
         </p>
         <p>
-          If you believe content infringes your rights, contact hello@dearpup.app and we will review
-          promptly.
+          If you believe content infringes your rights, contact hello@infinique.org and we will
+          review promptly.
         </p>
 
         <h2>13. Safety Measures and Enforcement</h2>
@@ -200,7 +200,7 @@ export default function TermsPage() {
 
         <h2>21. Contact Us</h2>
         <p>If you have questions, concerns, or complaints, contact:</p>
-        <p>📩 hello@dearpup.app</p>
+        <p>📩 hello@infinique.org</p>
       </div>
     </SectionContainer>
   )

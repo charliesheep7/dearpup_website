@@ -113,7 +113,7 @@ export default function PrivacyPage() {
           <li>Request help by contacting us if needed</li>
         </ul>
         <p>
-          <strong>Email:</strong> hello@dearpup.app
+          <strong>Email:</strong> hello@infinique.org
         </p>
 
         <h2>Changes to This Policy</h2>
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
 
         <h2>Contact Us</h2>
         <p>If you have any questions, please contact:</p>
-        <p>📩 hello@dearpup.app</p>
+        <p>📩 hello@infinique.org</p>
       </div>
     </SectionContainer>
   )

@@ -116,10 +116,10 @@ export default function FAQ() {
           <p className="mb-6 text-gray-600 dark:text-gray-400">
             Reach us at{' '}
             <a
-              href="mailto:hello@dearpup.app"
+              href="mailto:hello@infinique.org"
               className="text-[--color-accent-600] hover:underline"
             >
-              hello@dearpup.app
+              hello@infinique.org
             </a>
           </p>
           <a
