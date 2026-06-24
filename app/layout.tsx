@@ -145,12 +145,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'DeenUp',
-            url: 'https://www.deenup.app',
-            logo: 'https://www.deenup.app/static/favicons/android-chrome-512x512.png',
-            slogan: 'Learn Islam, One Swipe at a Time',
+            name: 'DearPup',
+            url: 'https://www.dearpup.app',
+            logo: 'https://www.dearpup.app/static/favicons/android-chrome-512x512.png',
+            slogan: 'Give your dog more good years',
             description:
-              'DeenUp turns doom-scrolling into learning — a fun, swipeable feed of bite-sized, scholar-approved Islamic knowledge with quizzes and daily streaks.',
+              "DearPup is the daily care companion that turns small habits into a longer, healthier life — built around your dog's breed, age, and lifestyle.",
           }),
         }}
       />

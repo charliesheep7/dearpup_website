@@ -10,8 +10,8 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   siteUrl: 'https://www.dearpup.app',
   siteRepo: '',
-  siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
+  siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.webp`,
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/logo.webp`,
   mastodon: '',
   email: '',
   github: '',
