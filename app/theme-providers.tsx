@@ -1,11 +1,11 @@
 'use client'
 
 import { ThemeProvider } from 'next-themes'
-import siteMetadata from '@/data/siteMetadata'
 
 export function ThemeProviders({ children }: { children: React.ReactNode }) {
+  // White mode only — DearPup's canvas is warm paper, no dark variant.
   return (
-    <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme} enableSystem>
+    <ThemeProvider attribute="class" forcedTheme="light" enableSystem={false}>
       {children}
     </ThemeProvider>
   )

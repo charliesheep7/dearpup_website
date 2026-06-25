@@ -15,11 +15,9 @@ export default function MediaTicker() {
   const allLogos = [...mediaLogos, ...mediaLogos]
 
   return (
-    <section className="overflow-hidden border-y border-gray-200 bg-white py-16 dark:border-gray-800 dark:bg-gray-950">
+    <section className="bg-paper border-line overflow-hidden border-y py-16">
       <div className="mb-8 text-center">
-        <p className="text-sm font-semibold tracking-wider text-gray-500 uppercase dark:text-gray-400">
-          As Featured In
-        </p>
+        <span className="eyebrow">As featured in</span>
       </div>
 
       {/* Infinite scroll ticker */}
@@ -27,13 +25,13 @@ export default function MediaTicker() {
         <div className="animate-scroll-infinite flex">
           {allLogos.map((logo, index) => (
             <div key={index} className="mx-8 flex flex-shrink-0 items-center justify-center">
-              <div className="flex h-16 w-32 items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm transition-all duration-300 hover:scale-105 hover:border-[--color-accent-300] hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-[--color-accent-700]">
+              <div className="flex h-16 w-32 items-center justify-center px-4 py-3">
                 <Image
                   src={logo.src}
                   alt={logo.name}
                   width={80}
                   height={40}
-                  className="max-h-10 w-auto object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 dark:invert dark:hover:invert-0"
+                  className="max-h-9 w-auto object-contain opacity-40 grayscale transition-all duration-300 hover:opacity-80"
                 />
               </div>
             </div>
@@ -41,8 +39,8 @@ export default function MediaTicker() {
         </div>
 
         {/* Gradient fade edges */}
-        <div className="pointer-events-none absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-white to-transparent dark:from-gray-950" />
-        <div className="pointer-events-none absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent dark:from-gray-950" />
+        <div className="from-paper pointer-events-none absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r to-transparent" />
+        <div className="from-paper pointer-events-none absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l to-transparent" />
       </div>
 
       <style jsx>{`

@@ -52,3 +52,10 @@ prd-seogen.md
 
 # Skill-local installs (platform-specific, self-installed at runtime)
 .claude/skills/*/node_modules/
+
+# Build artifacts
+tsconfig.tsbuildinfo
+
+# Local Claude Code config
+.claude/settings.local.json
+.claude/launch.json

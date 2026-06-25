@@ -2,20 +2,52 @@ import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 import 'remark-github-blockquote-alert/alert.css'
 
-import { Noto_Sans, Noto_Sans_Arabic, DM_Serif_Text } from 'next/font/google'
+import {
+  Bricolage_Grotesque,
+  Plus_Jakarta_Sans,
+  JetBrains_Mono,
+  Fasthand,
+  Noto_Sans_Arabic,
+} from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import RTLHandler from '@/components/RTLHandler'
 
-const noto_sans = Noto_Sans({
+// Display — Bricolage Grotesque (matches the DearPup app's headline family).
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-noto-sans',
+  variable: '--font-bricolage',
+})
+
+// Body + UI — Plus Jakarta Sans (the app's body/UI family).
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-jakarta',
+})
+
+// Every metric / number — JetBrains Mono (the app's numeral family).
+const jetbrains_mono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+  variable: '--font-jetbrains-mono',
+})
+
+// Brand wordmark only — Fasthand (the app's brush-script "DearPup" mark).
+const fasthand = Fasthand({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fasthand',
 })
 
 const noto_sans_arabic = Noto_Sans_Arabic({
@@ -23,13 +55,6 @@ const noto_sans_arabic = Noto_Sans_Arabic({
   weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-noto-sans-arabic',
-})
-
-const dm_serif = DM_Serif_Text({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-dm-serif',
 })
 
 export const metadata: Metadata = {
@@ -83,7 +108,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html
       lang="en"
       dir="ltr"
-      className={`${noto_sans.variable} ${noto_sans_arabic.variable} ${dm_serif.variable} scroll-smooth`}
+      className={`${bricolage.variable} ${jakarta.variable} ${jetbrains_mono.variable} ${fasthand.variable} ${noto_sans_arabic.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <script
@@ -133,11 +158,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <link
         rel="mask-icon"
         href={`${basePath}/static/favicons/safari-pinned-tab.svg`}
-        color="#D97757"
+        color="#0f4a3c"
       />
-      <meta name="msapplication-TileColor" content="#D97757" />
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF9F5" />
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
+      <meta name="msapplication-TileColor" content="#0f4a3c" />
+      <meta name="theme-color" content="#f4f2eb" />
       <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
       <script
         type="application/ld+json"
@@ -150,17 +174,20 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             logo: 'https://www.dearpup.app/static/favicons/android-chrome-512x512.png',
             slogan: 'Give your dog more good years',
             description:
-              "DearPup is the daily care companion that turns small habits into a longer, healthier life — built around your dog's breed, age, and lifestyle.",
+              "DearPup is a camera-first dog wellness app: scan your dog's food, poop, and face to turn everyday care into a routine, a photo journal, and a Health Score that climbs.",
           }),
         }}
       />
-      <body className="bg-gray-50 font-sans text-gray-800 antialiased ltr:pl-[calc(100vw-100%)] rtl:pr-[calc(100vw-100%)] dark:bg-gray-950 dark:text-white">
+      <body className="bg-cream text-ink font-sans antialiased ltr:pl-[calc(100vw-100%)] rtl:pr-[calc(100vw-100%)]">
         <RTLHandler />
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
-            <Header />
-            <main className="mb-auto">{children}</main>
+            <div className="flex min-h-screen flex-col">
+              <Header />
+              <main className="mb-auto">{children}</main>
+              <Footer />
+            </div>
           </SearchProvider>
         </ThemeProviders>
       </body>

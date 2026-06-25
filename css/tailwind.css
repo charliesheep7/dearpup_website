@@ -4,63 +4,102 @@
 @source '../node_modules/pliny';
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Core theme configuration */
+/* ──────────────────────────────────────────────────────────────────────────
+   DearPup — web design system.
+   Mirrors the app's "exam-room premium" palette (decadog/design-system):
+   warm-paper canvas, spruce-green brand, a tightly-rationed signal set.
+   One accent (spruce). No rainbow. Light mode only.
+   ────────────────────────────────────────────────────────────────────────── */
 @theme {
-  /* Font families */
+  /* Font families — Bricolage Grotesque (display) + Plus Jakarta Sans (body)
+     + JetBrains Mono (every metric / number). Matches the app exactly. */
   --font-sans:
-    var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    var(--font-jakarta), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-display: var(--font-bricolage), var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-bricolage), var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-brush: var(--font-fasthand), var(--font-bricolage), cursive;
   --font-arabic:
-    var(--font-noto-sans-arabic), var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-dm-serif), ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    var(--font-noto-sans-arabic), var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 
-  /* Colors - DearPup Brand Palette */
+  /* ─── Canvas ─────────────────────────────────────────────────────────── */
+  --color-cream: #f4f2eb; /* app background — warm paper */
+  --color-cream-2: #ece9de; /* muted fills, icon wells */
+  --color-paper: #ffffff; /* card surface */
+  --color-bg: #f4f2eb;
+  --color-surface: #ffffff;
+  --color-text: #18211c;
 
-  /* Accent color scale (warm amber/golden) - Primary brand color */
-  --color-accent-50: #fffbeb;
-  --color-accent-100: #fef3c7;
-  --color-accent-200: #fde68a;
-  --color-accent-300: #fcd34d;
-  --color-accent-400: #fbbf24;
-  --color-accent-500: #f59e0b;
-  --color-accent-600: #d97706;
-  --color-accent-700: #b45309;
-  --color-accent-800: #92400e;
-  --color-accent-900: #78350f;
-  --color-accent-950: #451a03;
+  /* ─── Ink (text) ─────────────────────────────────────────────────────── */
+  --color-ink: #18211c;
+  --color-ink-2: #3d4a42;
+  --color-ink-dim: #6b7a70;
+  --color-ink-faint: #a7b0a8;
 
-  /* Map primary to accent for compatibility */
-  --color-primary-50: #fffbeb;
-  --color-primary-100: #fef3c7;
-  --color-primary-200: #fde68a;
-  --color-primary-300: #fcd34d;
-  --color-primary-400: #fbbf24;
-  --color-primary-500: #f59e0b;
-  --color-primary-600: #d97706;
-  --color-primary-700: #b45309;
-  --color-primary-800: #92400e;
-  --color-primary-900: #78350f;
-  --color-primary-950: #451a03;
+  /* ─── Brand spruce — THE single accent ───────────────────────────────── */
+  --color-spruce: #0f4a3c;
+  --color-spruce-100: #e1ebe6;
+  --color-spruce-200: #bfd6cc;
+  --color-spruce-300: #6fa38f;
+  --color-spruce-700: #0a3329;
 
-  /* Neutral colors - Warm cream derived from brand colors */
-  --color-bg: #fffdf7;
-  --color-surface: #fef9ee;
-  --color-text: #3d3a2e;
+  /* ─── Signal greens (good / in range) ────────────────────────────────── */
+  --color-vital: #2fb668;
+  --color-leaf: #7fb13b;
 
-  /* Extended neutral scale for flexibility */
-  --color-gray-50: #faf9f5;
-  --color-gray-100: #f0eee6;
-  --color-gray-200: #e3e1d7;
-  --color-gray-300: #ccc9bc;
-  --color-gray-400: #aaa69a;
-  --color-gray-500: #8a8679;
-  --color-gray-600: #6d6a5f;
-  --color-gray-700: #57544c;
-  --color-gray-800: #3d3d3a;
-  --color-gray-900: #2a2926;
-  --color-gray-950: #1a1917;
+  /* ─── Warm accents (rare, supporting only) ───────────────────────────── */
+  --color-honey: #e7a93c;
+  --color-honey-100: #fbebcf;
+  --color-aqua: #4c97c4;
+
+  /* ─── Alert (rare — safety only) ─────────────────────────────────────── */
+  --color-alert: #d2492f;
+  --color-alert-100: #f6dbd3;
+
+  /* ─── Hairlines ──────────────────────────────────────────────────────── */
+  --color-line: #e8e4d8;
+
+  /* Accent + primary scales → spruce, so inherited boilerplate stays on-brand */
+  --color-accent-50: #e8f0ec;
+  --color-accent-100: #e1ebe6;
+  --color-accent-200: #bfd6cc;
+  --color-accent-300: #6fa38f;
+  --color-accent-400: #2d6a58;
+  --color-accent-500: #0f4a3c;
+  --color-accent-600: #0f4a3c;
+  --color-accent-700: #0a3329;
+  --color-accent-800: #082a22;
+  --color-accent-900: #06201a;
+  --color-accent-950: #04140f;
+
+  --color-primary-50: #e8f0ec;
+  --color-primary-100: #e1ebe6;
+  --color-primary-200: #bfd6cc;
+  --color-primary-300: #6fa38f;
+  --color-primary-400: #2d6a58;
+  --color-primary-500: #0f4a3c;
+  --color-primary-600: #0f4a3c;
+  --color-primary-700: #0a3329;
+  --color-primary-800: #082a22;
+  --color-primary-900: #06201a;
+  --color-primary-950: #04140f;
+
+  /* Neutral scale — warm greens-grays drawn from the ink ramp */
+  --color-gray-50: #f7f6f1;
+  --color-gray-100: #efece4;
+  --color-gray-200: #e8e4d8;
+  --color-gray-300: #cfd4cd;
+  --color-gray-400: #a7b0a8;
+  --color-gray-500: #6b7a70;
+  --color-gray-600: #4f5b53;
+  --color-gray-700: #3d4a42;
+  --color-gray-800: #26302a;
+  --color-gray-900: #18211c;
+  --color-gray-950: #0e1511;
 
   /* Line heights */
+  --line-height-hero: 0.98;
   --line-height-11: 2.75rem;
   --line-height-12: 3rem;
   --line-height-13: 3.25rem;
@@ -72,79 +111,108 @@
   --z-80: 80;
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-line, currentColor);
+  }
+
+  html {
+    background-color: #f4f2eb;
+    color: #18211c;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'calt', 'ss01';
   }
 
   a,
   button {
-    outline-color: var(--color-primary-500);
+    outline-color: var(--color-spruce);
   }
 
   a:focus-visible,
   button:focus-visible {
-    outline: 2px solid;
+    outline: 2px solid var(--color-spruce);
+    outline-offset: 2px;
     border-radius: var(--radius-sm);
-    outline-color: var(--color-primary-500);
   }
 }
 
 @layer utilities {
+  /* Editorial display type — Bricolage Grotesque, tight and confident. */
+  .text-hero {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 5.2vw, 5.25rem);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+  }
+
+  .text-display {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 3.6vw, 3.25rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-brush {
+    font-family: var(--font-brush);
+  }
+
+  .font-mono,
+  .tabular {
+    font-family: var(--font-mono);
+    font-feature-settings: 'tnum';
+  }
+
+  /* Small uppercase eyebrow — spruce, the one accent. */
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--color-spruce);
+  }
+
   .prose {
     & a {
-      color: var(--color-primary-500);
+      color: var(--color-spruce);
+      text-decoration-color: var(--color-spruce-200);
 
       &:hover {
-        color: var(--color-primary-600);
+        color: var(--color-spruce-700);
+        text-decoration-color: var(--color-spruce);
       }
 
       & code {
-        color: var(--color-primary-400);
+        color: var(--color-spruce);
       }
+    }
+
+    & :where(h1, h2, h3, h4) {
+      font-family: var(--font-display);
     }
 
     & :where(h1, h2) {
       font-weight: 700;
-      letter-spacing: var(--tracking-tight);
+      letter-spacing: -0.025em;
     }
 
     & h3 {
       font-weight: 600;
+      letter-spacing: -0.015em;
     }
 
     & :where(code):not(pre code) {
-      color: var(--color-indigo-500);
-    }
-  }
-
-  .prose-invert {
-    & a {
-      color: var(--color-primary-500);
-
-      &:hover {
-        color: var(--color-primary-400);
-      }
-
-      & code {
-        color: var(--color-primary-400);
-      }
-    }
-
-    & :where(h1, h2, h3, h4, h5, h6) {
-      color: var(--color-gray-100);
+      color: var(--color-spruce);
     }
   }
 }
@@ -158,7 +226,8 @@
 }
 
 .footnotes {
-  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+  @apply mt-12 border-t pt-8;
+  border-color: var(--color-line);
 }
 
 .data-footnote-backref {
@@ -175,12 +244,9 @@
 
 .no-scrollbar {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
-/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition:
@@ -208,11 +274,11 @@ input:-webkit-autofill:focus {
   vertical-align: middle;
 }
 
-/* Custom animations for landing page */
+/* Animations */
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
   }
 
   to {
@@ -221,35 +287,41 @@ input:-webkit-autofill:focus {
   }
 }
 
-@keyframes blob {
-  0%,
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
   100% {
-    transform: translate(0, 0) scale(1);
-  }
-
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
+    transform: translateX(-50%);
   }
 }
 
 .animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
+  animation: fade-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.animate-blob {
-  animation: blob 7s infinite;
+.animation-delay-100 {
+  animation-delay: 0.1s;
 }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
+.animation-delay-200 {
+  animation-delay: 0.2s;
 }
 
-.animation-delay-4000 {
-  animation-delay: 4s;
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+
+.marquee-pause:hover .animate-marquee {
+  animation-play-state: paused;
 }
 
 /* Arabic font support */
@@ -266,7 +338,6 @@ input:-webkit-autofill:focus {
   direction: ltr;
 }
 
-/* Use logical properties for RTL support */
 @layer utilities {
   .ms-auto {
     margin-inline-start: auto;

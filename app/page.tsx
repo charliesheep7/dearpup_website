@@ -8,7 +8,7 @@ import { genPageMetadata } from 'app/seo'
 export const metadata = genPageMetadata({
   title: 'DearPup — Give Your Dog More Good Years',
   description:
-    "DearPup is the daily care companion that turns small habits into a longer, healthier life for your dog. AI food scanner, personalized care plans, and lifespan tracking — built for your dog's breed, age, and lifestyle.",
+    "DearPup is a camera-first dog wellness app: scan your dog's food, poop, and face to turn everyday care into a simple routine, a photo journal, and a Health Score that climbs. Built around your dog's breed, age, and weight — with a daily loop across five science-backed pillars.",
 })
 
 export default async function Page() {
