@@ -8,7 +8,6 @@ import SectionContainer from '@/components/SectionContainer'
 import Image from '@/components/Image'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import BasmalahIntro from '@/components/BasmalahIntro'
 import FAQ from '@/components/FAQ'
 import Share from '@/components/Share'
 
@@ -100,7 +99,6 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
             <div className="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0 dark:divide-gray-700">
               <div className="prose dark:prose-invert max-w-none pt-10 pb-8">
                 <Share title={title} slug={slug} summary={summary} />
-                <BasmalahIntro />
                 {children}
                 {faqs && <FAQ faqs={faqs} />}
               </div>

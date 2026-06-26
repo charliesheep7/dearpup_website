@@ -9,7 +9,6 @@ import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import BasmalahIntro from '@/components/BasmalahIntro'
 import Share from '@/components/Share'
 
 interface LayoutProps {
@@ -43,7 +42,6 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
           </div>
           <div className="prose dark:prose-invert max-w-none py-4">
             <Share title={title} slug={slug} summary={summary} />
-            <BasmalahIntro />
             {children}
           </div>
           {siteMetadata.comments && (
