@@ -114,7 +114,7 @@ export default function FAQ() {
             href="https://apps.apple.com/app/dearpup"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-spruce text-paper hover:bg-spruce-700 mt-6 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-colors duration-200"
+            className="bg-spruce hover:bg-spruce-700 mt-6 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-200"
           >
             Download DearPup free
           </a>

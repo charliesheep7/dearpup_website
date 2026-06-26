@@ -22,7 +22,7 @@ export default function CTA() {
                 />
                 <span className="font-brush text-spruce-200 text-xl">DearPup</span>
               </div>
-              <h2 className="text-display text-paper">
+              <h2 className="text-display text-white">
                 Your dog deserves
                 <br />
                 <span className="text-spruce-200">their best years.</span>
@@ -56,7 +56,7 @@ export default function CTA() {
             {/* Decorative side — large numeral */}
             <div className="hidden items-center justify-center border-l border-white/10 bg-white/5 p-14 lg:flex">
               <div className="text-center">
-                <div className="text-paper font-mono text-[4.5rem] leading-none font-medium">5</div>
+                <div className="font-mono text-[4.5rem] leading-none font-medium text-white">5</div>
                 <div className="text-spruce-200 mt-3 text-sm font-medium tracking-wide uppercase">
                   pillars of a long life
                 </div>

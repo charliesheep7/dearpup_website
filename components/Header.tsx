@@ -59,7 +59,7 @@ const Header = () => {
             href={APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-spruce text-paper hover:bg-spruce-700 ml-2 hidden rounded-full px-4 py-2 text-sm font-semibold transition-colors sm:inline-flex"
+            className="bg-spruce hover:bg-spruce-700 ml-2 hidden rounded-full px-4 py-2 text-sm font-semibold text-white transition-colors sm:inline-flex"
           >
             Get the app
           </a>
