@@ -183,7 +183,7 @@
   }
 
   .prose {
-    & a {
+    & :where(a):not(:where(.not-prose, .not-prose *) a) {
       color: var(--color-spruce);
       text-decoration-color: var(--color-spruce-200);
 

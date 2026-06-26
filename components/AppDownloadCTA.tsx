@@ -16,7 +16,7 @@ const AppDownloadCTA = ({
     <p className="mb-4 text-gray-600 dark:text-gray-400">{blurb}</p>
     <Link
       href="https://apps.apple.com/app/dearpup"
-      className="bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 inline-block rounded-lg px-5 py-2.5 text-sm font-medium text-white"
+      className="bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 inline-block rounded-lg px-5 py-2.5 text-sm font-medium !text-white"
     >
       Download DearPup Free
     </Link>
