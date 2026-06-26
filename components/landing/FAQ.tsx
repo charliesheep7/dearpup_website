@@ -103,8 +103,11 @@ export default function FAQ() {
           <p className="font-display text-ink text-lg font-semibold">Still have questions?</p>
           <p className="text-ink-dim mt-2">
             Reach us at{' '}
-            <a href="mailto:hello@dearpup.app" className="text-spruce font-medium hover:underline">
-              hello@dearpup.app
+            <a
+              href="mailto:hello@infinique.org"
+              className="text-spruce font-medium hover:underline"
+            >
+              hello@infinique.org
             </a>
           </p>
           <a
