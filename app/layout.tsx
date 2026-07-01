@@ -172,7 +172,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             name: 'DearPup',
             url: 'https://www.dearpup.app',
             logo: 'https://www.dearpup.app/static/favicons/android-chrome-512x512.png',
-            slogan: 'Give your dog more good years',
+            slogan: 'Help your dog live healthier and happier',
             description:
               "DearPup is a camera-first dog wellness app: scan your dog's food, poop, and face to turn everyday care into a routine, a photo journal, and a Health Score that climbs.",
           }),

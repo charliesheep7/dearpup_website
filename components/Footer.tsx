@@ -59,7 +59,7 @@ export default function Footer() {
 
         <div className="border-line text-ink-faint mt-12 flex flex-col gap-2 border-t pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} DearPup. All rights reserved.</span>
-          <span>Give your dog more good years.</span>
+          <span>Help your dog live healthier and happier.</span>
         </div>
       </div>
     </footer>

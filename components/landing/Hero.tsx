@@ -23,9 +23,9 @@ export default function Hero() {
               className="text-hero animate-fade-in animation-delay-100 text-ink mt-6"
               style={{ opacity: 0 }}
             >
-              Give your dog
+              Help your dog
               <br />
-              <span className="text-spruce">more good years.</span>
+              <span className="text-spruce">live healthier and happier.</span>
             </h1>
 
             <p

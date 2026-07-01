@@ -7,7 +7,7 @@ interface AppDownloadCTAProps {
 }
 
 const AppDownloadCTA = ({
-  title = 'Give your dog more good years',
+  title = 'Help your dog live healthier and happier',
   blurb = 'DearPup is the daily care companion that turns small habits into a longer, healthier life for your dog — AI food scanner, personalized care plan, and lifespan tracking.',
   placement,
 }: AppDownloadCTAProps) => (

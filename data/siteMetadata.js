@@ -1,6 +1,6 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'DearPup — Give Your Dog More Good Years',
+  title: 'DearPup — Help Your Dog Live Healthier and Happier',
   author: 'DearPup',
   authorSlug: 'sih-c',
   headerTitle: 'DearPup',
