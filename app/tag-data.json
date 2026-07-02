@@ -1,5 +1,11 @@
 {
-  "dog-nutrition": 2,
-  "food-safety": 2,
-  "dog-health": 2
+  "dog-health": 22,
+  "dog-training": 1,
+  "daily-care": 13,
+  "dog-nutrition": 25,
+  "food-safety": 22,
+  "longevity": 3,
+  "senior-dogs": 2,
+  "dog-breeds": 2,
+  "puppy-care": 2
 }

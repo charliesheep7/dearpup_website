@@ -111,7 +111,7 @@ export default function FAQ() {
             </a>
           </p>
           <a
-            href="https://apps.apple.com/app/dearpup"
+            href="https://apps.apple.com/us/app/dearpup-daily-dog-care/id6783599461"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-spruce hover:bg-spruce-700 mt-6 inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-200"

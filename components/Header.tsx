@@ -8,7 +8,7 @@ import headerNavLinks from '@/data/headerNavLinks'
 import Link from './Link'
 import MobileNav from './MobileNav'
 
-const APP_STORE_URL = 'https://apps.apple.com/app/dearpup'
+const APP_STORE_URL = 'https://apps.apple.com/us/app/dearpup-daily-dog-care/id6783599461'
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from './Link'
 
-const APP_STORE_URL = 'https://apps.apple.com/app/dearpup'
+const APP_STORE_URL = 'https://apps.apple.com/us/app/dearpup-daily-dog-care/id6783599461'
 
 const footerLinks = [
   { href: '/blog', title: 'Blog' },

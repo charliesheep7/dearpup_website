@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 
-const APP_STORE_URL = 'https://apps.apple.com/app/dearpup'
+const APP_STORE_URL = 'https://apps.apple.com/us/app/dearpup-daily-dog-care/id6783599461'
 
 export default function CTA() {
   return (

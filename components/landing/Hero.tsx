@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 
-const APP_STORE_URL = 'https://apps.apple.com/app/dearpup'
+const APP_STORE_URL = 'https://apps.apple.com/us/app/dearpup-daily-dog-care/id6783599461'
 
 export default function Hero() {
   return (
@@ -23,9 +23,9 @@ export default function Hero() {
               className="text-hero animate-fade-in animation-delay-100 text-ink mt-6"
               style={{ opacity: 0 }}
             >
-              Help your dog
+              Help your dog live
               <br />
-              <span className="text-spruce">live healthier and happier.</span>
+              <span className="text-spruce">healthier and happier.</span>
             </h1>
 
             <p
