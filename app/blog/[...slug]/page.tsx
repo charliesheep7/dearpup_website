@@ -52,6 +52,9 @@ const buildJsonLdAuthors = (authorDetails: ReturnType<typeof resolveAuthorDetail
     return {
       '@type': 'Person',
       name: author.name,
+      // Google reads @type plus url/sameAs to work out which person this is.
+      // The bio page is the stable anchor; sameAs carries the off-site profiles.
+      url: `${siteMetadata.siteUrl}/about`,
       jobTitle: author.occupation || undefined,
       worksFor: author.company
         ? {
@@ -155,7 +158,9 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
   jsonLd['author'] = buildJsonLdAuthors(authorDetails)
   jsonLd['publisher'] = {
     '@type': 'Organization',
-    name: 'DeenUp',
+    // Was 'DeenUp' — copied from the template this site was forked from, so every
+    // post credited the wrong brand as publisher.
+    name: 'DearPup',
     logo: {
       '@type': 'ImageObject',
       url: `${siteMetadata.siteUrl}/static/favicons/android-chrome-512x512.png`,
