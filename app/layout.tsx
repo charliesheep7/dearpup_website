@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: {
     default: siteMetadata.title,
-    template: `%s | ${siteMetadata.title}`,
+    template: `%s | ${siteMetadata.headerTitle}`,
   },
   description: siteMetadata.description,
   openGraph: {
@@ -175,6 +175,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             slogan: 'Help your dog live healthier and happier',
             description:
               "DearPup is a camera-first dog wellness app: scan your dog's food, poop, and face to turn everyday care into a routine, a photo journal, and a Health Score that climbs.",
+            // The one identity we can prove: the App Store listing every CTA points at.
+            sameAs: ['https://apps.apple.com/us/app/dearpup-daily-dog-care/id6783599461'],
           }),
         }}
       />

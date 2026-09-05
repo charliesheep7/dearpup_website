@@ -28,58 +28,15 @@ interface LanguageAlternatesOptions {
 
 export function buildLanguageAlternates(
   path: string,
-  {
-    includeArabic = true,
-    includeEnglish = true,
-    xDefault,
-    englishPath,
-    arabicPath,
-    canonical,
-    currentLanguage = 'en',
-  }: LanguageAlternatesOptions = {}
+  { canonical, englishPath }: LanguageAlternatesOptions = {}
 ): Metadata['alternates'] {
-  const normalizedEnglish = normalizePath(englishPath ?? path)
-  const derivedArabic = normalizedEnglish === '/' ? '/ar' : `/ar${normalizedEnglish}`
-  const normalizedArabic = normalizePath(arabicPath ?? derivedArabic)
-  const normalizedCanonical = canonical
-    ? normalizePath(canonical)
-    : currentLanguage === 'ar'
-      ? normalizedArabic
-      : normalizedEnglish
-
-  // CRITICAL FIX: Use absolute URLs for canonical and hreflang
-  // Relative URLs cause "Duplicate canonical" errors in Google Search Console
-  // because www.deenup.app and deenup.app resolve relative URLs differently
-  const baseUrl = siteMetadata.siteUrl
-  const absoluteEnglish = `${baseUrl}${normalizedEnglish}`
-  const absoluteArabic = `${baseUrl}${normalizedArabic}`
-  const absoluteCanonical = `${baseUrl}${normalizedCanonical}`
-
-  const languages: Record<string, string> = {}
-
-  // Only add x-default for English pages (default locale)
-  // Arabic pages should not have x-default to avoid canonical conflicts
-  if (currentLanguage === 'en') {
-    if (xDefault === 'ar') {
-      languages['x-default'] = absoluteArabic
-    } else if (xDefault && xDefault !== 'en') {
-      languages['x-default'] = `${baseUrl}${normalizePath(xDefault)}`
-    } else {
-      languages['x-default'] = absoluteEnglish
-    }
-  }
-
-  if (includeEnglish) {
-    languages.en = absoluteEnglish
-  }
-  if (includeArabic) {
-    languages.ar = absoluteArabic
-  }
-
-  return {
-    canonical: absoluteCanonical,
-    languages,
-  }
+  // DearPup publishes in English only, so there are no language alternates to
+  // declare: Google ignores hreflang that is not reciprocal, and a lone
+  // self-reference says nothing. What every page does need is an absolute
+  // self-canonical, which is what this now returns. Callers still pass the
+  // old language options; they are accepted and ignored.
+  const normalized = normalizePath(canonical ?? englishPath ?? path)
+  return { canonical: `${siteMetadata.siteUrl}${normalized}` }
 }
 
 export function genPageMetadata({ title, description, image, ...rest }: PageSEOProps): Metadata {
@@ -89,7 +46,7 @@ export function genPageMetadata({ title, description, image, ...rest }: PageSEOP
     title,
     description: description || siteMetadata.description,
     openGraph: {
-      title: `${title} | ${siteMetadata.title}`,
+      title: `${title} | ${siteMetadata.headerTitle}`,
       description: description || siteMetadata.description,
       url: './',
       siteName: siteMetadata.title,
@@ -97,7 +54,7 @@ export function genPageMetadata({ title, description, image, ...rest }: PageSEOP
       type: 'website',
     },
     twitter: {
-      title: `${title} | ${siteMetadata.title}`,
+      title: `${title} | ${siteMetadata.headerTitle}`,
       card: 'summary_large_image',
       images: image ? [image] : [siteMetadata.socialBanner],
     },

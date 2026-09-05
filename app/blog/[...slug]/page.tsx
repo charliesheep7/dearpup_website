@@ -13,6 +13,7 @@ import PostBanner from '@/layouts/PostBanner'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 import { notFound } from 'next/navigation'
+import { buildLanguageAlternates } from 'app/seo'
 
 const defaultLayout = 'PostLayout'
 const layouts = {
@@ -92,22 +93,15 @@ export async function generateMetadata(props: {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const keywords = (post as any).metaKeywords
 
-  // Check if this post has an Arabic version
-  const hasArabicVersion = allBlogs.some((p) => p.slug === post.slug && p.lang === 'ar')
-
   return {
     title: post.title,
     description: post.summary,
     keywords: keywords || undefined,
-    alternates: hasArabicVersion
-      ? {
-          languages: {
-            'x-default': `/blog/${post.slug}`,
-            en: `/blog/${post.slug}`,
-            ar: `/ar/blog/${post.slug}`,
-          },
-        }
-      : undefined,
+    // Always an explicit self-canonical. This used to be `undefined` whenever
+    // no translation existed — which is every post — and an explicit undefined
+    // here overrides the root layout's `canonical: './'` rather than inheriting
+    // it, so no post shipped with a canonical at all.
+    alternates: buildLanguageAlternates(`/blog/${post.slug}`),
     openGraph: {
       title: post.title,
       description: post.summary,
