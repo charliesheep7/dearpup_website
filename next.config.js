@@ -92,6 +92,11 @@ module.exports = () => {
     },
     async redirects() {
       return [
+        {
+          source: '/blog/is-freshpet-good-for-dogs',
+          destination: '/blog/is-fresh-pet-good-for-dogs',
+          permanent: true,
+        },
         // Redirect old .ar extension URLs to correct Arabic routes
         // These URLs were mistakenly crawled by Google
         {
