@@ -2,13 +2,7 @@ import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 import 'remark-github-blockquote-alert/alert.css'
 
-import {
-  Bricolage_Grotesque,
-  Plus_Jakarta_Sans,
-  JetBrains_Mono,
-  Fasthand,
-  Noto_Sans_Arabic,
-} from 'next/font/google'
+import localFont from 'next/font/local'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import Header from '@/components/Header'
@@ -18,41 +12,44 @@ import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import RTLHandler from '@/components/RTLHandler'
 
+// Fonts are the Google Fonts variable files (latin subset; arabic for Noto),
+// self-hosted from app/fonts so builds don't depend on fetching Google Fonts.
+
 // Display — Bricolage Grotesque (matches the DearPup app's headline family).
-const bricolage = Bricolage_Grotesque({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+const bricolage = localFont({
+  src: './fonts/bricolage-grotesque-latin.woff2',
+  weight: '400 700',
   display: 'swap',
   variable: '--font-bricolage',
 })
 
 // Body + UI — Plus Jakarta Sans (the app's body/UI family).
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+const jakarta = localFont({
+  src: './fonts/plus-jakarta-sans-latin.woff2',
+  weight: '400 700',
   display: 'swap',
   variable: '--font-jakarta',
 })
 
 // Every metric / number — JetBrains Mono (the app's numeral family).
-const jetbrains_mono = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
+const jetbrains_mono = localFont({
+  src: './fonts/jetbrains-mono-latin.woff2',
+  weight: '400 700',
   display: 'swap',
   variable: '--font-jetbrains-mono',
 })
 
 // Brand wordmark only — Fasthand (the app's brush-script "DearPup" mark).
-const fasthand = Fasthand({
+const fasthand = localFont({
+  src: './fonts/fasthand-latin.woff2',
   weight: '400',
-  subsets: ['latin'],
   display: 'swap',
   variable: '--font-fasthand',
 })
 
-const noto_sans_arabic = Noto_Sans_Arabic({
-  subsets: ['arabic'],
-  weight: ['400', '500', '600', '700'],
+const noto_sans_arabic = localFont({
+  src: './fonts/noto-sans-arabic-arabic.woff2',
+  weight: '400 700',
   display: 'swap',
   variable: '--font-noto-sans-arabic',
 })
