@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers static-assets deploy of the Next.js static export (`out/`).
+  // Build with `npm run build:cf`, deploy with `npx wrangler deploy`.
+  "name": "dearpup-website",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
