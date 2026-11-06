@@ -58,6 +58,9 @@ const securityHeaders = [
 const output = process.env.EXPORT ? 'export' : undefined
 const basePath = process.env.BASE_PATH || undefined
 const unoptimized = process.env.UNOPTIMIZED ? true : undefined
+const cloudflareImages = process.env.CF_IMAGES
+  ? { loader: 'custom', loaderFile: './lib/cloudflare-image-loader.js' }
+  : {}
 
 /**
  * @type {import('next/dist/next-server/server/config').NextConfig}
@@ -81,6 +84,7 @@ module.exports = () => {
         },
       ],
       unoptimized,
+      ...cloudflareImages,
     },
     async headers() {
       return [
